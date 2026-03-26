@@ -1,61 +1,67 @@
-ICA: A Falsifiable Theory of Cognitive Stability
 
-Integrative Cognitive Architecture (ICA) introduces a testable, mathematically grounded hypothesis about how stable, adaptive cognition emerges:
+Integrative Cognitive Architecture (ICA)
 
-A cognitive system remains coherent and robust under uncertainty only when its controller-layer operators (UAMC, ICC, ASM, TRP, PPO, IGO, RMO, SLO) are jointly optimized under a single coherence condition.
+A Unified, Mathematically Grounded, Empirically Falsifiable Theory of Cognitive Stability
 
-This is ICA’s core research contribution.
-It is not just an architecture — it is a theory with predictions, failure modes, and empirical tests.
+Integrative Cognitive Architecture (ICA) is the first framework to provide a unified, mathematically grounded theory of cognitive stability, predicting both system coherence and failure modes under uncertainty. ICA hypothesizes that cognitive systems remain coherent and robust only when controller‑layer operators (UAMC, ICC, ASM, TRP, PPO, IGO, RMO, SLO) are jointly optimized under a single coherence condition.
 
 ---
 
-Research Contributions
+Controller‑Layer Operators (One‑Line Definitions)
 
-1. Unified Objective Function
-
-ICA formalizes cognition as the joint optimization of interacting controller outputs:
-
-• signal clarity (UAMC)
-• uncertainty reduction (ASM + TRP)
-• safety alignment (RMO)
-• structural integration (IGO + PPO)
-• coherence maintenance (ICC)
-• long-horizon stability (SLO)
+• UAMC — signal clarity modulation
+• ICC — global coherence constraint
+• ASM — uncertainty‑sensitivity modulation
+• TRP — targeted uncertainty reduction
+• PPO — policy‑prior organization
+• IGO — integration of structural gradients
+• RMO — risk‑modulation operator
+• SLO — long‑horizon stability operator
 
 
-This produces a single, analyzable objective rather than a collection of heuristics.
+---
 
-2. Explicit Controller Layer (ICC + modulators)
+Unified Objective Function
 
-ICA includes a mathematically defined controller suite that predicts:
+ICA formalizes cognition as the joint optimization of controller outputs, yielding a single analyzable objective instead of heuristic collections.
 
-• when exploration becomes unstable
-• when oscillation or collapse will occur
-• when safe‑mode or aggressive‑mode transitions are triggered
-• how stability is restored under uncertainty
+---
+
+Explicit Controller Suite
+
+ICA’s mathematically defined controller suite predicts system behavior under uncertainty, including:
+
+• instability during exploration
+• oscillation or collapse
+• activation of safe‑ or aggressive‑mode transitions
+• recovery of stability
 
 
-This makes ICA predictive, not descriptive.
+This makes ICA predictive rather than descriptive.
 
-3. Three Evaluation Models (1‑D, 2‑D, 3‑D)
+---
 
-The architecture is testable at increasing levels of embodiment:
+Evaluation Models
 
-• 1‑D Gaussian toy environment
+ICA is testable across three progressively richer environments:
+
+• 1‑D toy model demonstrations
 • 2‑D interaction model
 • 3‑D embodied model
 
 
-Each layer exposes different stability and coherence properties.
+Each exposes distinct stability windows, coherence properties, and failure modes.
 
-4. Derived Stability Result
+---
 
-ICA predicts — and demonstrates — that the safety-alignment controller (RMO) is a required stabilizer.
-Systems lacking it exhibit:
+Derived Stability Result
+
+ICA predicts — and demonstrates — that RMO is a required stabilizer.
+Systems lacking RMO exhibit:
 
 • runaway exploration
 • adversarial collapse
-• incoherent long‑horizon behavior
+• long‑horizon incoherence
 • failure to recover from Black Swan events
 
 
@@ -65,27 +71,22 @@ This is a falsifiable claim.
 
 Evidence Included in This Repository
 
-• 1‑D toy environment showing stable exploration
-• Stability windows + hysteresis analysis
-• Black Swan stress tests revealing failure modes
-• Controller‑layer predictions that can be experimentally falsified
+• 1‑D toy model demonstrations
+• Stability windows and hysteresis analysis
+• Black Swan stress tests
+• Controller‑layer predictions
 • Mathematical derivations of the coherence condition
-• Operator‑level interaction analysis across the full controller suite
+• Operator‑interaction analysis across the full controller suite
 
 
 Together, these form a complete evaluation suite for ICA’s central hypothesis.
 
 ---
 
-Why This Matters
+Why ICA Matters
 
-ICA reframes cognitive architecture as a scientific theory:
-
-• It makes a claim
-• It provides math
-• It predicts failure modes
-• It offers experiments
-• It can be proven wrong
+ICA reframes cognitive architecture as a scientific theory.
+It makes precise claims, provides mathematical structure, predicts instability, offers replicable tests, and is empirically falsifiable.
 
 
 ---
