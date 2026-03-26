@@ -1,52 +1,81 @@
+Integrative Cognitive Architecture (ICA) — V1.a
 
-ICA V1.a — Integrative Cognitive Architecture
+Canonical Specification • Academic Doctrine • Public Release
+Authored and stewarded by Sean Meehan
 
-A unified, academically grounded cognitive architecture designed by Sean Meehan.
-This repository contains the canonical specification, doctrine, and operational foundations of ICA V1.a.
+ICA V1.a is a unified cognitive architecture that integrates curiosity, coherence, adaptive control, and intrinsic stability into a single mathematically grounded system.
+This repository serves as the permanent, public, canonical archive of the ICA V1.a specification and doctrine.
+
+---
 
 Purpose
 
-ICA V1.a provides a clean, mathematically defensible framework for understanding and shaping cognitive behavior.
-It integrates operators, modulators, regulators, and deployment‑readiness layers into a single coherent system.
+ICA provides a rigorous, interpretable framework for understanding and shaping intelligent behavior under uncertainty.
+It unifies:
 
-Contents
+• core operators
+• modulators
+• regulators
+• controller layers
+• stability conditions
+• deployment‑readiness structures
+• the full scaling hierarchy
 
-• ICA‑V1a‑Academic.md — The full academic specification
+
+into one coherent, mathematically defensible architecture.
+
+---
+
+Repository Contents
+
+• ICA‑V1a‑Academic.md — Full academic specification
 • LICENSE — MIT License for code
 • LICENSE-DOCS — Documentation license
 • NOTICE — Attribution and rights
 • COPYRIGHT — Authorship and protection
 
 
+---
+
 Why ICA Matters
 
 ICA V1.a is designed for:
 
-• Cognitive science researchers
+• cognitive science researchers
 • AI alignment and RL engineers
-• Systems theorists
-• Architects of adaptive, interpretable cognitive systems
+• systems theorists
+• architects of adaptive, interpretable cognitive systems
 
 
-It offers:
+It provides:
 
-• A unified objective function
-• Transparent operator interactions
-• Stability and failure‑mode analysis
-• Deployment‑ready controller layers
-• A mathematically grounded scaling hierarchy
+• a unified objective function
+• transparent operator interactions
+• mathematically grounded stability analysis
+• failure‑mode and robustness evaluation
+• deployment‑ready controller layers
+• a principled scaling hierarchy for 1‑D, 2‑D, and 3‑D cognition
 
 
-Versioning
+---
 
-This repository contains ICA V1.a, the canonical, timestamped version.
-All refinements are integrated directly into the doctrine with explicit confirmation.
+Versioning and Canonical Integrity
+
+This repository contains ICA V1.a, the authoritative, timestamped version.
+All refinements are integrated into the doctrine with explicit confirmation to preserve canonical integrity and academic traceability.
+
+---
 
 Authorship
 
-Created and stewarded by Sean Meehan, architect of ICA.
+Designed and stewarded by Sean Meehan, architect of ICA.
 
-License
+---
 
-Code is MIT‑licensed.
-Documentation is separately licensed under LICENSE-DOCS.
+Licensing
+
+• Code is MIT‑licensed
+• Documentation is licensed under LICENSE-DOCS
+
+
+---
