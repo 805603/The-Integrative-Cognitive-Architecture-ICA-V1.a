@@ -1,11 +1,4 @@
-How to Read ICA V1.a
 
-This is the section that helps professors, engineers, and researchers understand how to approach the architecture without being overwhelmed. It’s the missing piece that makes your repo feel intentional and academically guided.
-
-Below is the best possible version — polished, concise, and architect‑level.
-You can paste this directly under the README, right after “Purpose” or right before “Repository Contents.”
-
----
 
 How to Read ICA V1.a
 
