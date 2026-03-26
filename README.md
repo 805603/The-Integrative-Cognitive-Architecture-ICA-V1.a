@@ -96,9 +96,15 @@ Citation
 If you reference ICA V1.a in academic work, cite this repository as the canonical source.
 
 ---
-This project is licensed under the [MIT License](LICENSE).
+## Licensing
 
-This project is licensed under the [Apache 2.0 License](LICENSE).
+This repository uses a mixed-license structure:
+
+• All source code is licensed under the MIT License (see LICENSE).  
+• All documentation, manuscripts, diagrams, and written materials are
+  licensed under CC BY-ND 4.0 (see LICENSE-DOCS).  
+
+See the NOTICE file for a summary of licensing terms.
 
 ---
 
