@@ -1,144 +1,167 @@
-ICA V1.a – Operator and Architecture Diagram (Text‑Only)
+# ICA‑V1.a Operator Diagram and System Flow
 
-1. High‑Level Architecture
-
-The ICA agent is structured as a set of interacting subsystems arranged in nested control loops:
-
-• World Model
-• Preference Model
-• Policy System
-• Meta‑Cognitive Layer
-• Regulatory Shell
-• Deployment Safety Envelope
-
-
-Information flows inward for perception and outward for action, with meta‑cognition and regulation shaping the entire process.
+This document provides schematic diagrams and structural summaries of the
+Integrative Cognitive Architecture (ICA) operator suite, coherence
+constraint, unified objective, and action/state loop. These diagrams
+serve as visual anchors for the ICA V1.a Technical Specification.
 
 ---
 
-2. Text‑Only Architecture Diagram
+## 1. Operator Interaction Diagram
 
-This diagram uses indentation and arrows to show the full system layout.
+The controller‑layer operators form a structured suite that jointly
+shape system behavior under uncertainty.
 
-ICA Agent
-• Observations
- → Perception Operator
-  → Feature Representation
-   → Belief Update Operator
-    → Belief State (bₜ)
-     → Uncertainty Estimates (Σₜ)
-     → Predictive Model Outputs
+Diagram 1: Operator Suite (Text Schematic)
 
-• Preferences
- → Context Input (cₜ)
- → Meta‑Cognitive Signals (mₜ)
-  → Preference Update Operator
-   → Preference State (pₜ)
-    → Goals
-    → Constraints
-     → Hard Constraints
-     → Soft Constraints
-    → Alignment Parameters
-
-• Policy
- → Policy Input: (bₜ, pₜ, hₜ, oₜ)
-  → Policy Operator πθ
-   → Proposed Action (aₜ)
-
-• Meta‑Cognition
- → Inputs: performance, prediction error, surprise, reliability, history
-  → Meta‑Cognitive Operator
-   → Meta‑Signals (mₜ)
-   → Threshold Adjustments
-   → Regulator Updates
-
-• Regulators
- → Inputs: aₜ, xₜ, constraints, thresholds
-  → Action Regulator
-   → Safe Action (aₜᵈᵉᵖˡᵒʸ)
-  → Capability Regulator
-  → Escalation Regulator
-
-• Deployment Shell
- → Action Filtering
- → Rate Limiting
- → Domain Restrictions
- → Logging and Monitoring
- → Human‑in‑the‑Loop Hooks
-
-• Environment
- ← Receives aₜᵈᵉᵖˡᵒʸ
- → Produces new observations oₜ₊₁
+    ┌──────────────────────────────────────────────────────────┐
+    │                    Controller‑Layer Operators             │
+    │                                                          │
+    │  UAMC   ASM   TRP   PPO   IGO   RMO   SLO                │
+    │   │      │     │     │     │     │     │                │
+    └───┬──────┴─────┴─────┴─────┴─────┴─────┴────────────────┘
+        │
+        ▼
+    ┌──────────────────────────────────────────────────────────┐
+    │                       ICC (Constraint)                   │
+    │         Measures local inconsistency between             │
+    │         structural gradients and policy priors           │
+    └──────────────────────────────────────────────────────────┘
+        │
+        ▼
+    ┌──────────────────────────────────────────────────────────┐
+    │                     GCC (Global Alignment)               │
+    │   GCC = || Σ operator gradients − ∇ₓ SLO ||              │
+    └──────────────────────────────────────────────────────────┘
 
 ---
 
-3. Operator Summary
+## 2. Unified Objective Flow
 
-Belief Operator (𝓑)
+Diagram 2: Objective Construction
 
-Updates latent state and uncertainty from observations and actions.
+    UAMC  →  
+    ASM   →  
+    TRP   →  
+    PPO   →   Weighted Sum →   Unified Objective J   →   Action Selection
+    IGO   →  
+    RMO   →  
+    SLO   →  
+    ICC (subtracted as penalty)
 
-Preference Operator (𝓟)
+Compact representation:
 
-Adjusts goals, constraints, and alignment weights based on context and meta‑signals.
-
-Policy Operator (πθ)
-
-Maps internal state and observations to proposed actions.
-
-Learning Operator (𝓛)
-
-Updates policy parameters using reward, regulatory signals, and modulators.
-
-Meta‑Cognitive Operator (φ)
-
-Generates meta‑signals, evaluates reliability, and adjusts thresholds.
-
-Regulatory Operator (𝓡)
-
-Filters, restricts, or overrides actions to enforce safety and capability limits.
+    J = Σ λ_i O_i − λ₈ ICC
 
 ---
 
-4. Control Loop Structure
+## 3. Action/State Loop
 
-Inner Loop (Task Loop)
+Diagram 3: ICA Control Loop
 
-Observation → Belief Update → Policy → Action → Environment → Observation
+    ┌──────────────────────────────────────────────────────────┐
+    │                    Internal State x_t                    │
+    └──────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+    ┌──────────────────────────────────────────────────────────┐
+    │                Controller‑Layer Operators                │
+    └──────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+    ┌──────────────────────────────────────────────────────────┐
+    │                Unified Objective J(x_t, a)               │
+    └──────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+    ┌──────────────────────────────────────────────────────────┐
+    │                 Action Selection a_t                     │
+    │             a_t = argmax_a J(x_t, a)                     │
+    └──────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+    ┌──────────────────────────────────────────────────────────┐
+    │                State Update x_{t+1}                      │
+    │          x_{t+1} = f(x_t, a_t) + η_t                     │
+    └──────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+                Loop continues
 
-Middle Loop (Learning Loop)
+---
 
-Performance → Learning Operator → Policy Update
+## 4. GCC‑Driven Stability Diagram
 
-Outer Loop (Meta‑Cognitive Loop)
+Diagram 4: Stability via Coherence
 
-Prediction Error → Meta‑Signals → Preference Update → Modulators → Regulators
-
-Deployment Loop (Safety Loop)
-
-Proposed Action → Regulatory Shell → Safe Action → Environment
+    Operator Gradients
+           │
+           ▼
+    ┌──────────────────────────────┐
+    │      Gradient Sum Vector     │
+    └──────────────────────────────┘
+           │
+           ▼
+    ┌──────────────────────────────┐
+    │   GCC = || gradient sum ||   │
+    └──────────────────────────────┘
+           │
+           ▼
+    ┌──────────────────────────────┐
+    │  Stable if GCC ≤ ε           │
+    │  Unstable if GCC > ε         │
+    └──────────────────────────────┘
 
 ---
 
-5. Information Flow Summary
+## 5. Evaluation Model Diagrams
 
-• Perception flows inward.
-• Policy flows outward.
-• Meta‑cognition flows downward into preferences and modulators.
-• Regulators flow upward into action selection.
-• Deployment flows around the entire system as a safety envelope.
+### 5.1 1‑D Toy Model (Schematic)
 
+    x_t ∈ ℝ
+    ┌───────────────┐
+    │ 1‑D Line       │
+    │ Noise: Gaussian│
+    │ Risk Zone:     │
+    │   [unsafe]     │
+    └───────────────┘
+
+Figure placeholder: 1‑D Stability Regimes — operator‑coded
+
+---
+
+### 5.2 2‑D Interaction Model (Schematic)
+
+    x_t ∈ ℝ²
+    ┌───────────────────────────────┐
+    │ 2‑D Plane                     │
+    │ Risk: directional             │
+    │ Uncertainty: spatial gradient │
+    └───────────────────────────────┘
+
+Figure placeholder: 2‑D Interaction Dynamics — operator influence map
 
 ---
 
-6. Purpose of This Diagram
+### 5.3 3‑D Embodied Model (Schematic)
 
-This operator diagram provides:
+    x_t ∈ ℝ³
+    ┌───────────────────────────────┐
+    │ 3‑D Embodied Agent            │
+    │ Sensorimotor coupling         │
+    │ Adversarial perturbations     │
+    │ Long‑horizon stability        │
+    └───────────────────────────────┘
 
-• A clear, text‑only representation of ICA’s architecture
-• A reference for implementation and academic review
-• A structural map for the spec, math appendix, and deployment notes
-• A stable, canonical diagram for ICA V1.a
-
+Figure placeholder: 3‑D Embodied Stability Analysis — operator overlay
 
 ---
+
+## 6. Licensing Note
+
+This document is protected under the repository’s licensing structure.  
+All conceptual, mathematical, and architectural components—including
+operator suite, coherence mechanisms, and system flow—constitute
+protected intellectual property of ICA V1.a.
+
+See LICENSE and LICENSE-DOCS in the repository root for full terms.
