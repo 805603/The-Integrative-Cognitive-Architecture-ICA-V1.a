@@ -68,10 +68,9 @@ Citation
 If you reference ICA V1.a in academic work, cite this repository as the canonical source.
 
 ---
+This project is licensed under the [MIT License](LICENSE).
 
-License
-
-Include your chosen license here.
+This project is licensed under the [Apache 2.0 License](LICENSE).
 
 ---
 
