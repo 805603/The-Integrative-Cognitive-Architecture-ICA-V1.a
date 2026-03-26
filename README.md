@@ -1,65 +1,92 @@
-ICA V1.a – Integrative Cognitive Architecture
+ICA: A Falsifiable Theory of Cognitive Stability
 
-A unified, control‑theoretic, meta‑cognitive framework for intelligent behavior
+Integrative Cognitive Architecture (ICA) introduces a testable, mathematically grounded hypothesis about how stable, adaptive cognition emerges:
 
-Overview
+A cognitive system remains coherent and robust under uncertainty only when its controller-layer operators (UAMC, ICC, ASM, TRP, PPO, IGO, RMO, SLO) are jointly optimized under a single coherence condition.
 
-ICA V1.a is the first complete, canonical release of the Integrative Cognitive Architecture.
-It defines a mathematically grounded, operationally deployable system for shaping intelligent behavior under uncertainty, with explicit meta‑cognition, regulators, modulators, and a full deployment safety shell.
-
-This repository contains the full academic specification, mathematical foundations, operator diagram, implementation notes, and version history.
+This is ICA’s core research contribution.
+It is not just an architecture — it is a theory with predictions, failure modes, and empirical tests.
 
 ---
 
-Core Documents
+Research Contributions
 
-1. Specification (Primary Document)
+1. Unified Objective Function
 
-The full architectural description of ICA V1.a:
-ICA-V1a-Specification.md
+ICA formalizes cognition as the joint optimization of interacting controller outputs:
 
-2. Mathematical Appendix
+• signal clarity (UAMC)
+• uncertainty reduction (ASM + TRP)
+• safety alignment (RMO)
+• structural integration (IGO + PPO)
+• coherence maintenance (ICC)
+• long-horizon stability (SLO)
 
-Formal definitions, equations, operator math, and stability conditions:
-ICA-V1a-Math-Appendix.md
 
-3. Operator Diagram
+This produces a single, analyzable objective rather than a collection of heuristics.
 
-A text‑only, GitHub‑friendly architectural diagram showing subsystem layout and information flow:
-ICA-V1a-Operator-Diagram.md
+2. Explicit Controller Layer (ICC + modulators)
 
-4. Implementation Notes
+ICA includes a mathematically defined controller suite that predicts:
 
-Engineering guidance for instantiating ICA in RL, control systems, or hybrid architectures:
-ICA-V1a-Implementation-Notes.md
+• when exploration becomes unstable
+• when oscillation or collapse will occur
+• when safe‑mode or aggressive‑mode transitions are triggered
+• how stability is restored under uncertainty
 
-5. Changelog
 
-Version history and release notes for ICA V1.a and future versions:
-CHANGELOG.md
+This makes ICA predictive, not descriptive.
+
+3. Three Evaluation Models (1‑D, 2‑D, 3‑D)
+
+The architecture is testable at increasing levels of embodiment:
+
+• 1‑D Gaussian toy environment
+• 2‑D interaction model
+• 3‑D embodied model
+
+
+Each layer exposes different stability and coherence properties.
+
+4. Derived Stability Result
+
+ICA predicts — and demonstrates — that the safety-alignment controller (RMO) is a required stabilizer.
+Systems lacking it exhibit:
+
+• runaway exploration
+• adversarial collapse
+• incoherent long‑horizon behavior
+• failure to recover from Black Swan events
+
+
+This is a falsifiable claim.
 
 ---
 
-Version
+Evidence Included in This Repository
 
-Current version: V1.a
-Status: Stable, canonical, reference release
+• 1‑D toy environment showing stable exploration
+• Stability windows + hysteresis analysis
+• Black Swan stress tests revealing failure modes
+• Controller‑layer predictions that can be experimentally falsified
+• Mathematical derivations of the coherence condition
+• Operator‑level interaction analysis across the full controller suite
+
+
+Together, these form a complete evaluation suite for ICA’s central hypothesis.
 
 ---
 
-Purpose
+Why This Matters
 
-This repository serves as the authoritative academic and engineering reference for ICA.
-It is designed for:
+ICA reframes cognitive architecture as a scientific theory:
 
-• researchers
-• engineers
-• cognitive scientists
-• safety and alignment practitioners
-• systems architects
+• It makes a claim
+• It provides math
+• It predicts failure modes
+• It offers experiments
+• It can be proven wrong
 
-
-ICA V1.a is intended to be clear, interpretable, mathematically grounded, and deployable in real systems.
 
 ---
 
