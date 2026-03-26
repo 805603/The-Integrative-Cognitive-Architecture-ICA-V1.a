@@ -1,81 +1,78 @@
-Integrative Cognitive Architecture (ICA) — V1.a
+ICA V1.a – Integrative Cognitive Architecture
 
-Canonical Specification • Academic Doctrine • Public Release
-Authored and stewarded by Sean Meehan
+A unified, control‑theoretic, meta‑cognitive framework for intelligent behavior
 
-ICA V1.a is a unified cognitive architecture that integrates curiosity, coherence, adaptive control, and intrinsic stability into a single mathematically grounded system.
-This repository serves as the permanent, public, canonical archive of the ICA V1.a specification and doctrine.
+Overview
+
+ICA V1.a is the first complete, canonical release of the Integrative Cognitive Architecture.
+It defines a mathematically grounded, operationally deployable system for shaping intelligent behavior under uncertainty, with explicit meta‑cognition, regulators, modulators, and a full deployment safety shell.
+
+This repository contains the full academic specification, mathematical foundations, operator diagram, implementation notes, and version history.
+
+---
+
+Core Documents
+
+1. Specification (Primary Document)
+
+The full architectural description of ICA V1.a:
+ICA-V1a-Specification.md
+
+2. Mathematical Appendix
+
+Formal definitions, equations, operator math, and stability conditions:
+ICA-V1a-Math-Appendix.md
+
+3. Operator Diagram
+
+A text‑only, GitHub‑friendly architectural diagram showing subsystem layout and information flow:
+ICA-V1a-Operator-Diagram.md
+
+4. Implementation Notes
+
+Engineering guidance for instantiating ICA in RL, control systems, or hybrid architectures:
+ICA-V1a-Implementation-Notes.md
+
+5. Changelog
+
+Version history and release notes for ICA V1.a and future versions:
+CHANGELOG.md
+
+---
+
+Version
+
+Current version: V1.a
+Status: Stable, canonical, reference release
 
 ---
 
 Purpose
 
-ICA provides a rigorous, interpretable framework for understanding and shaping intelligent behavior under uncertainty.
-It unifies:
+This repository serves as the authoritative academic and engineering reference for ICA.
+It is designed for:
 
-• core operators
-• modulators
-• regulators
-• controller layers
-• stability conditions
-• deployment‑readiness structures
-• the full scaling hierarchy
+• researchers
+• engineers
+• cognitive scientists
+• safety and alignment practitioners
+• systems architects
 
 
-into one coherent, mathematically defensible architecture.
+ICA V1.a is intended to be clear, interpretable, mathematically grounded, and deployable in real systems.
 
 ---
 
-Repository Contents
+Citation
 
-• ICA‑V1a‑Academic.md — Full academic specification
-• LICENSE — MIT License for code
-• LICENSE-DOCS — Documentation license
-• NOTICE — Attribution and rights
-• COPYRIGHT — Authorship and protection
-
+If you reference ICA V1.a in academic work, cite this repository as the canonical source.
 
 ---
 
-Why ICA Matters
+License
 
-ICA V1.a is designed for:
-
-• cognitive science researchers
-• AI alignment and RL engineers
-• systems theorists
-• architects of adaptive, interpretable cognitive systems
-
-
-It provides:
-
-• a unified objective function
-• transparent operator interactions
-• mathematically grounded stability analysis
-• failure‑mode and robustness evaluation
-• deployment‑ready controller layers
-• a principled scaling hierarchy for 1‑D, 2‑D, and 3‑D cognition
-
+Include your chosen license here.
 
 ---
 
-Versioning and Canonical Integrity
-
-This repository contains ICA V1.a, the authoritative, timestamped version.
-All refinements are integrated into the doctrine with explicit confirmation to preserve canonical integrity and academic traceability.
-
----
-
-Authorship
-
-Designed and stewarded by Sean Meehan, architect of ICA.
-
----
-
-Licensing
-
-• Code is MIT‑licensed
-• Documentation is licensed under LICENSE-DOCS
-
-
----
+End of README
