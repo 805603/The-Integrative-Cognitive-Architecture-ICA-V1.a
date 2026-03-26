@@ -1,187 +1,310 @@
-Integrative Cognitive Architecture (ICA) V1.a — Academic Specification
+Integrative Cognitive Architecture (ICA): Academic Overview
 
-Abstract
-
-This document defines the Integrative Cognitive Architecture (ICA) V1.a as a modular, operator‑based cognitive control system. ICA specifies a unified loop for perception, evaluation, decision, and action using a structured set of operators, modulators, and controllers. The architecture is mathematically tractable, operationally interpretable, and compatible with reinforcement learning, control theory, and information‑theoretic analysis. This specification formalizes the components, their interfaces, the model hierarchy, and the stability mechanisms required for robust deployment.
+Integrative Cognitive Architecture (ICA) is a predictive, mathematically grounded theory of cognitive stability that models adaptive behavior via coordinated control operators under a global coherence constraint. ICA hypothesizes that cognitive systems remain coherent and robust only when controller‑layer operators (UAMC, ICC, ASM, TRP, PPO, IGO, RMO, SLO) act in coordinated balance.
 
 ---
 
-Scope and Objectives
+1. Controller‑Layer Operators
 
-ICA V1.a provides:
 
-• A unified cognitive control loop
-• A formal operator set
-• A structured modulator set
-• A controller hierarchy
-• A multi‑level model hierarchy (1‑D, 2‑D, 3‑D)
-• Stability and deployment requirements
-
-The architecture is domain‑agnostic and can be implemented in biological, artificial, or hybrid systems.
+Operator	Name	One‑Line Definition UAMC	Signal Clarity Modulation	Regulates representational clarity under uncertainty ICC	Coherence Constraint Operator	Enforces local consistency across internal signals ASM	Uncertainty‑Sensitivity Modulation	Adjusts responsiveness to uncertainty levels TRP	Targeted Uncertainty Reduction	Directs sampling toward uncertainty‑reducing actions PPO	Policy‑Prior Organization	Structures policy tendencies and action priors IGO	Integration of Structural Gradients	Accumulates and integrates learned structure RMO	Risk‑Modulation Operator	Modulates behavior based on risk signals SLO	Long‑Horizon Stability Operator	Maintains temporal stability across extended trajectories
 
 ---
 
-System Overview
-
-ICA implements a recurrent loop:
-
-1. Perception and input integration
-2. State estimation
-3. Relevance evaluation
-4. Context construction
-5. Policy and goal computation
-6. Planning and constraint enforcement
-7. Action selection
-8. Feedback and update
+1. Unified Objective Function
 
 
-Each stage is implemented by a named operator or controller, with modulators shaping thresholds, priorities, and resource allocation.
+ICA formalizes cognition as the joint optimization of controller outputs, yielding a single analyzable objective instead of heuristic collections. The objective integrates:
+
+• UAMC — clarity modulation • ASM / TRP — uncertainty sensitivity and reduction • IGO / PPO — structural integration and policy organization • ICC — local coherence enforcement • SLO — long‑horizon stability • RMO — risk‑aligned modulation
+
+This formulation enables mathematical analysis, stability prediction, and falsifiable hypotheses.
 
 ---
 
-Core Operators
+1. Predictive Control Dynamics
 
-3.1 Unified Attention and Monitoring Controller (UAMC)
 
-Allocates attention and monitoring resources.
+ICA’s mathematically defined controller suite predicts system behavior under uncertainty, including:
 
-3.2 Relevance Mapping Operator (RMO)
+• exploration instability • oscillation or collapse • activation of safe‑mode or aggressive‑mode transitions • recovery of stability
 
-Computes relevance of signals relative to goals and context.
-
-3.3 Internal Context Constructor (ICC)
-
-Maintains internal context over time.
-
-3.4 Policy and Preference Operator (PPO)
-
-Computes policy distribution and preference‑weighted action scores.
-
-3.5 Internal Goal Operator (IGO)
-
-Maintains and updates internal goals.
-
-3.6 Self‑Limiting Operator (SLO)
-
-Enforces constraints on actions and internal processes.
-
-3.7 Trajectory and Planning Operator (TRP)
-
-Constructs and evaluates candidate trajectories.
-
-3.8 Adaptive State Model (ASM)
-
-Maintains adaptive model of internal and external state.
+These predictive dynamics distinguish ICA from descriptive or heuristic architectures.
 
 ---
 
-Modulators
+1. Global Coherence Constraint (GCC)
 
-(unchanged — all 12 modulators remain exactly as written)
 
----
+To avoid confusion with the ICC operator, ICA refers to the system‑level constraint as the Global Coherence Constraint (GCC).
 
-Controller Architecture
+GCC ensures that:
 
-(unchanged — local, intermediate, global controllers remain exactly as written)
+• IGO — structural gradients • PPO — policy priors • ASM / TRP — uncertainty signals • RMO — risk modulation • UAMC — clarity modulation
 
----
+are aligned with long‑horizon stability (SLO).
 
-Mathematical Formalization
-
-Let:
-
-• \(x_t\): internal state
-• \(o_t\): observations
-• \(a_t\): actions
-• \(g_t\): goals
-• \(c_t\): context
-• \(m_t\): modulatory signals
-• \(\theta\): parameters
-
-6.1 State Update (ASM)
-
-\(x_{t+1} = f_{\text{ASM}}(x_t, o_t, a_t; \theta_{\text{ASM}})\)
-
-6.2 Attention and Relevance
-
-\(w^{\text{att}}_t = f_{\text{UAMC}}(o_t, c_t, m_t)\)
-\(r_t = f_{\text{RMO}}(w^{\text{att}}_t \odot o_t, g_t, c_t)\)
-
-6.3 Context Construction
-
-\(c_{t+1} = f_{\text{ICC}}(c_t, r_t, x_t)\)
-
-6.4 Policy and Goals
-
-\(g_{t+1} = f_{\text{IGO}}(g_t, c_t, \text{feedback}_t)\)
-\(\pi(a_t \mid x_t, c_t, g_t; \theta_{\text{PPO}})\)
-
-6.5 Planning and Constraints
-
-\(\tau = (a_t, a_{t+1}, \ldots, a_{t+H})\)
-\(J(\tau) = \mathbb{E}\left[ \sum_{k=0}^{H} \gamma^k R_{t+k} \mid \tau, x_t, c_t, g_t \right]\)
-\(\tau^\prime = \text{SLO}(\tau, \mathcal{C})\)
-
-6.6 Modulation
-
-\(m_t^{(M)} = f_M(z_t; \phi_M)\)
+Violations of GCC predict instability, oscillation, or collapse.
 
 ---
 
-⭐ Inserted Section (Compassion Constraint — Canonical V1.a)
-
-(This is the new part, placed exactly where it belongs.)
-
-6.7 Compassion Constraint (State‑Space Safety Condition)
-
-ICA V1.a enforces a compassion‑based safety invariant by constraining the system’s dynamics to a subset of allowable states. The allowed region is defined as:
-
-\mathcal{S}_{\text{compassion}}
-=\left\{x \;:\; \mathbb{E}[H(x,u)] \;\le\; \lambda \cdot \mathbb{E}[I(x,u)] \right\}
+1. Controller‑Layer Interaction Schematic
 
 
-Where:
-
-• \(H(x,u)\) is the expected harm signal
-• \(I(x,u)\) is the expected information‑gain signal
-• \(\lambda > 0\) is the compassion calibration parameter
-
-
-The global state update is therefore:
-
-\dot{x} = \Pi_{\mathcal{S}_{\text{compassion}}}(f(x,u;\theta))
-
-
-All updates that would violate the compassion inequality are projected back into the safe set via \(\Pi\), ensuring that curiosity‑driven exploration never exceeds the system’s harm‑aware constraints.
+(Figure 0 placeholder: “Controller‑Layer Operators → GCC → System‑Level Output Flow”) A future schematic can illustrate how operator outputs feed into GCC and jointly determine system stability.
 
 ---
 
-Model Hierarchy
+1. Evaluation Models
 
-(unchanged — 1‑D, 2‑D, 3‑D models remain exactly as written)
+
+ICA is evaluated across three progressively richer environments:
+
+6.1 1‑D Toy Model Demonstrations
+
+Used to analyze:
+
+• operator interactions • stability windows • collapse thresholds • hysteresis behavior
+
+(Figure 1 placeholder: “1‑D Toy Model Stability Regimes — color‑coded by operator contribution”)
+
+6.2 2‑D Interaction Model
+
+Supports:
+
+• multi‑variable uncertainty • directional risk modulation • coherence‑condition stress testing
+
+(Figure 2 placeholder: “2‑D Interaction Model Dynamics — operator influence map”)
+
+6.3 3‑D Embodied Model
+
+Enables:
+
+• sensorimotor coupling • long‑horizon stability analysis • adversarial perturbation testing
+
+(Figure 3 placeholder: “3‑D Embodied Stability Analysis — operator contribution overlay”)
+
+Each model exposes distinct failure modes and stability regimes.
 
 ---
 
-Stability and Deployment
+1. Derived Stability Result
 
-(unchanged — stabilizers, homeostasis, error budgets, deployment requirements remain exactly as written)
+
+Systems lacking RMO — a required stabilizer — exhibit runaway exploration, adversarial collapse, long‑horizon incoherence, and failure to recover from Black Swan events. This prediction is empirically falsifiable and central to ICA’s theory.
 
 ---
 
-Canonical V1.a Specification
+1. System‑Level Behavior
 
-(unchanged — operator set, modulator set, controller hierarchy, model hierarchy, stability layer, loop structure)
 
+When the Global Coherence Constraint is satisfied:
+
+• Exploration stabilizes • Risk modulation prevents collapse • Structural integration accumulates • Long‑horizon behavior remains coherent
+
+When the constraint is violated:
+
+• Oscillation emerges • Exploration destabilizes • Risk signals saturate • Collapse or runaway behavior occurs
+
+These behaviors are reproducible across evaluation models.
+
+---
+
+1. Summary
+
+
+ICA defines cognition as a predictive control system governed by interacting operators under a coherence constraint. The architecture provides:
+
+• a unified objective • a mathematically defined controller suite • falsifiable stability predictions • multi‑layer evaluation environments
+
+This positions ICA as a predictive, falsifiable scientific theory rather than a descriptive framework.
+
+---
+
+1. Repository Note
+
+
+The ICA V1.a repository provides full derivations, simulation code, and evaluation results.
+
+—ntegrative Cognitive Architecture (ICA): Academic Overview
+
+Integrative Cognitive Architecture (ICA) is a predictive, mathematically grounded theory of cognitive stability that models adaptive behavior via coordinated control operators under a global coherence constraint. ICA hypothesizes that cognitive systems remain coherent and robust only when controller‑layer operators (UAMC, ICC, ASM, TRP, PPO, IGO, RMO, SLO) act in coordinated balance.
+
+---
+
+1. Controller‑Layer Operators
+
+
+Operator	Name	One‑Line Definition UAMC	Signal Clarity Modulation	Regulates representational clarity under uncertainty ICC	Coherence Constraint Operator	Enforces local consistency across internal signals ASM	Uncertainty‑Sensitivity Modulation	Adjusts responsiveness to uncertainty levels TRP	Targeted Uncertainty Reduction	Directs sampling toward uncertainty‑reducing actions PPO	Policy‑Prior Organization	Structures policy tendencies and action priors IGO	Integration of Structural Gradients	Accumulates and integrates learned structure RMO	Risk‑Modulation Operator	Modulates behavior based on risk signals SLO	Long‑Horizon Stability Operator	Maintains temporal stability across extended trajectories
+
+---
+
+1. Unified Objective Function
+
+
+ICA formalizes cognition as the joint optimization of controller outputs, yielding a single analyzable objective instead of heuristic collections. The objective integrates:
+
+• UAMC — clarity modulation • ASM / TRP — uncertainty sensitivity and reduction • IGO / PPO — structural integration and policy organization • ICC — local coherence enforcement • SLO — long‑horizon stability • RMO — risk‑aligned modulation
+
+This formulation enables mathematical analysis, stability prediction, and falsifiable hypotheses.
+
+---
+
+1. Predictive Control Dynamics
+
+
+ICA’s mathematically defined controller suite predicts system behavior under uncertainty, including:
+
+• exploration instability • oscillation or collapse • activation of safe‑mode or aggressive‑mode transitions • recovery of stability
+
+These predictive dynamics distinguish ICA from descriptive or heuristic architectures.
+
+---
+
+1. Global Coherence Constraint (GCC)
+
+
+To avoid confusion with the ICC operator, ICA refers to the system‑level constraint as the Global Coherence Constraint (GCC).
+
+GCC ensures that:
+
+• IGO — structural gradients • PPO — policy priors • ASM / TRP — uncertainty signals • RMO — risk modulation • UAMC — clarity modulation
+
+are aligned with long‑horizon stability (SLO).
+
+Violations of GCC predict instability, oscillation, or collapse.
+
+---
+
+1. Controller‑Layer Interaction Schematic
+
+
+(Figure 0 placeholder: “Controller‑Layer Operators → GCC → System‑Level Output Flow”) A future schematic can illustrate how operator outputs feed into GCC and jointly determine system stability.
+
+---
+
+1. Evaluation Models
+
+
+ICA is evaluated across three progressively richer environments:
+
+6.1 1‑D Toy Model Demonstrations
+
+Used to analyze:
+
+• operator interactions • stability windows • collapse thresholds • hysteresis behavior
+
+(Figure 1 placeholder: “1‑D Toy Model Stability Regimes — color‑coded by operator contribution”)
+
+6.2 2‑D Interaction Model
+
+Supports:
+
+• multi‑variable uncertainty • directional risk modulation • coherence‑condition stress testing
+
+(Figure 2 placeholder: “2‑D Interaction Model Dynamics — operator influence map”)
+
+6.3 3‑D Embodied Model
+
+Enables:
+
+• sensorimotor coupling • long‑horizon stability analysis • adversarial perturbation testing
+
+(Figure 3 placeholder: “3‑D Embodied Stability Analysis — operator contribution overlay”)
+
+Each model exposes distinct failure modes and stability regimes.
+
+---
+
+1. Derived Stability Result
+
+
+Systems lacking RMO — a required stabilizer — exhibit runaway exploration, adversarial collapse, long‑horizon incoherence, and failure to recover from Black Swan events. This prediction is empirically falsifiable and central to ICA’s theory.
+
+---
+
+1. System‑Level Behavior
+
+
+When the Global Coherence Constraint is satisfied:
+
+• Exploration stabilizes • Risk modulation prevents collapse • Structural integration accumulates • Long‑horizon behavior remains coherent
+
+When the constraint is violated:
+
+• Oscillation emerges • Exploration destabilizes • Risk signals saturate • Collapse or runaway behavior occurs
+
+These behaviors are reproducible across evaluation models.
+
+---
+
+1. Summary
+
+
+ICA defines cognition as a predictive control system governed by interacting operators under a coherence constraint. The architecture provides:
+
+• a unified objective • a mathematically defined controller suite • falsifiable stability predictions • multi‑layer evaluation environments
+
+This positions ICA as a predictive, falsifiable scientific theory rather than a descriptive framework.
+
+---
+
+1. Repository Note
+
+
+The ICA V1.a repository provides full derivations, simulation code, and evaluation results.
+
+---
 ---
 Licensing Note
-This document is protected under the repository’s licensing structure. 
-The operator set, modulator set, controller hierarchy, model hierarchy, 
-and loop structure constitute protected intellectual property of ICA V1.a.
 
-End of Document
+This document is protected under the repository’s licensing structure.
+All conceptual, mathematical, and architectural components—including the
+operator set, controller hierarchy, model hierarchy, and loop structure—
+constitute protected intellectual property of ICA V1.a.
 
----
+See LICENSE and LICENSE-DOCS in the repository root for full terms.
+
+ICA V1.a — Copyright © 2024–2026
+All rights reserved.
+
+This repository contains original intellectual property including the
+Integrative Cognitive Architecture (ICA), controller-layer operators,
+model hierarchy, stability framework, and associated documentation.
+
+See LICENSE and LICENSE-DOCS for full legal terms.
+
+NOTICE
+
+This repository uses a mixed-license structure:
+
+• All source code is licensed under the MIT License (see LICENSE).
+• All documentation, manuscripts, diagrams, and written materials are
+  licensed under CC BY-ND 4.0 (see LICENSE-DOCS).
+
+No part of the ICA V1.a architecture—including the operator set,
+controller hierarchy, model hierarchy, or stability framework—may be
+modified or redistributed except as permitted by the applicable license.
+
+Creative Commons Attribution–NoDerivatives 4.0 International (CC BY-ND 4.0)
+
+This license applies to all documentation, manuscripts, diagrams, and
+written materials in this repository. You may share this material with
+attribution, but you may not remix, transform, or build upon it.
+
+Full license text: https://creativecommons.org/licenses/by-nd/4.0/
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, subject to the conditions stated in
+this file.
+
+Full license text is included in this repository’s LICENSE file.
+
 
 End of Document
 
