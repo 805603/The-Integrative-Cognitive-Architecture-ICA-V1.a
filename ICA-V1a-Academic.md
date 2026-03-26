@@ -1,4 +1,4 @@
-ntegrative Cognitive Architecture (ICA) V1.a — Academic Specification
+Integrative Cognitive Architecture (ICA) V1.a — Academic Specification
 
 Abstract
 
