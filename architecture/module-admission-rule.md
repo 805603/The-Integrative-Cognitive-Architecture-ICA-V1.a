@@ -1,7 +1,7 @@
 
 # Module Admission Rule
 
-The module‑admission rule defines when a new component, behavior, or subsystem is allowed to enter ICA V1.a. The architecture maintains stability by ensuring that every module—whether cognitive, regulatory, or embodied—meets strict coherence and safety requirements before becoming part of the active system. This prevents fragmentation, overload, and the introduction of unstable dynamics.
+The module‑admission rule defines when a new component, behavior, or subsystem is allowed to enter ICA V1.a. The architecture maintains stability by ensuring that every module—whether computational, regulatory, or embodied—meets strict coherence and safety requirements before becoming part of the active system. This prevents fragmentation, overload, and the introduction of unstable dynamics.
 
 ## Core Requirement
 A module may only enter the architecture if it increases or preserves global coherence. Any module that reduces coherence, introduces instability, or conflicts with existing components is rejected automatically. This ensures that the architecture evolves without compromising internal integrity.
@@ -9,7 +9,7 @@ A module may only enter the architecture if it increases or preserves global coh
 ## Evaluation Criteria
 Each candidate module is evaluated along several dimensions:
 - coherence impact
-- compatibility with operators
+- compatibility with SCO, URO, RCO, and MIO signal pathways
 - modulation responsiveness
 - regulatory alignment
 - embodied stability signals
@@ -28,12 +28,12 @@ The reflex arc provides embodied feedback that influences module admission. If g
 
 ## Integration Path
 Modules that pass admission are integrated gradually through:
-- operator alignment
+- SCO/URO/RCO/MIO signal‑path alignment
 - modulation calibration
 - regulatory mapping
 - coherence verification
 
-This staged integration prevents abrupt shifts and ensures smooth incorporation into the cognitive flow.
+This staged integration prevents abrupt shifts and ensures smooth incorporation into the system’s operational flow.
 
 ## Summary
 The module‑admission rule protects ICA V1.a from instability by ensuring that only coherent, compatible, and embodied‑safe modules enter the system. It maintains architectural integrity while allowing adaptive growth and refinement.
