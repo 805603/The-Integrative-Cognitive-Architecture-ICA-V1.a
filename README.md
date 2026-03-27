@@ -1,32 +1,78 @@
-# Integrative Cognitive Architecture (ICA) V1.a  
-### by Sean Meehan
 
-A minimal, engineer‑focused cognitive architecture built on a coherence‑driven OS layer, four core operators, a complete modulation and regulation stack, and an embodied stability loop. The system is designed for clarity, modularity, and real‑world deployment.
 
-## Vertical Stack Layout
-1. **OS Layer (Coherence Engine)**  
-2. **Operators** – Awareness, Curiosity, Compassion, Knowledge  
-3. **Modulators** – 12 canonical modulators + Timing + Mindfulness  
-4. **Regulators** – ICC, UAMC, ASM, PPO, RMO, SLO, Noise Gate, Dampener  
-5. **Diagnostics** – Hysteresis, stability monitors, coherence checks  
+## Architecture Overview
 
-## Reflex Arc (Embodied Stability Loop)
-Trigger → Physical Cue → Completion Signal → Coherence Stabilization → Suspended‑Aliveness Baseline
+### architecture/
 
-## Experiential → Engineering Translation
-- Suspended aliveness → Baseline coherence state  
-- Reflex arc → Embodied stability loop  
-- Warmth / softening → Parasympathetic stabilization signal  
-- Grounding → Somatic anchor variable  
-- Clarity → Signal‑to‑noise coherence ratio  
-- Curiosity → Expected uncertainty reduction  
-- Compassion → Danger‑zone penalty function  
+This folder contains the complete definition of ICA V1.a:
 
-## Repository Structure
-- `/architecture` – Core system files  
-- `/diagrams` – Visual schematics  
-- `/docs` – Supporting documentation  
-- `/examples` – Toy models and demonstrations  
+- **os-layer.md** – The coherence engine and global integrator  
+- **operators.md** – Awareness, Curiosity, Compassion, Knowledge  
+- **modulators.md** – Gain, timing, grounding, uncertainty weighting  
+- **regulators.md** – ICC, ASM, PPO, RMO, SLO, Noise Gate, Dampener  
+- **diagnostics.md** – Coherence monitoring, hysteresis, signal quality  
+- **reflex-arc.md** – Trigger → Cue → Completion → Stabilization  
+- **suspended-aliveness.md** – The architecture’s optimal coherence state  
+- **module-admission-rule.md** – Safety and coherence gating  
+- **vertical-stack.md** – The full hierarchical layout  
 
-## License
-MIT License. See LICENSE and NOTICE for details.
+### diagrams/
+
+Text specifications for all system diagrams:
+
+- **system-overview.md**  
+- **reflex-arc.md**  
+- **vertical-stack.md**  
+- **operator-flow.md**  
+- **regulation-flow.md**  
+- **coherence-loop.md**  
+
+These files define the visual structure of ICA V1.a for future rendering.
+
+### docs/
+
+Includes:
+
+- **README-How-to-Read-ICA.md** – A guide for new readers  
+- **LICENSE** – Core license for the architecture  
+- **LICENSE-DOCS** – License for documentation  
+- **COPYRIGHT** – Copyright statement  
+- **NOTICE** – Notices required for distribution  
+
+## Licensing
+
+This repository uses a **dual‑license structure**:
+
+- **LICENSE** governs the architecture, code, and technical content.  
+- **LICENSE-DOCS** governs the documentation, diagrams, and written explanations.  
+- **COPYRIGHT** asserts authorship and ownership.  
+- **NOTICE** provides required legal notices for redistribution.
+
+All licensing files are already included in the repository root and apply to this README as well.
+
+## Intended Audience
+
+ICA V1.a is written for:
+
+- cognitive scientists  
+- AI researchers  
+- systems engineers  
+- clinicians and practitioners  
+- academic reviewers  
+- developers exploring cognitive architectures  
+
+The system is designed to be both conceptually clear and operationally precise.
+
+## Status
+
+ICA V1.a is complete, stable, and ready for academic review, engineering translation, and deployment‑oriented exploration.
+
+## Citation
+
+If referencing ICA V1.a in academic or technical work:
+
+**Meehan, Sean. _The Integrative Cognitive Architecture (ICA V1.a)._ 2026.**
+
+## Contact
+
+For academic or engineering inquiries, please open an issue or contact the maintainer directly.
