@@ -1,174 +1,322 @@
-ICA V1.a — Mathematical Appendix (Canonical Specification, 2026 Revision)
 
-1. Core State and System Variables
+# ICA V1.a — Mathematical Appendix (Canonical Specification, 2026 Revision)
+
+This appendix provides the formal mathematical foundations of ICA V1.a. It defines the system state, operator equations, coherence constraints, stability conditions, and the unified objective in its complete analytical form. All notation is aligned with the ICA V1.a Technical Specification.
+
+---
+
+## 1. Core State and System Variables
+
 The agent maintains a structured internal state:
-    x_t = (ŝ_t, θ_t, Σ_t, m_t)
+```blockmath
+x_t = (\hat{s}_t, \theta_t, \Sigma_t, m_t)
+```
 
-where:
-• ŝ_t is the estimated latent state (SES output)
-• θ_t are internal model parameters (MUS parameters)
-• Σ_t is the uncertainty estimate associated with ŝ_t
-• m_t is the meta‑cognitive signal vector
+Where:
+- `\( \hat{s}_t \)`: latent state estimate (SES output)  
+- `\( \theta_t \)`: internal model parameters (MUS parameters)  
+- `\( \Sigma_t \)`: uncertainty estimate associated with `\( \hat{s}_t \)`  
+- `\( m_t \)`: meta‑cognitive mode variable  
 
 Observations follow:
-    o_t ~ P(o_t | a_{t-1}, environment)
+```blockmath
+o_t \sim P(o_t \mid a_{t-1}, \text{environment})
+```
 
 Actions are produced by:
-    a_t = π(x_t, o_t)
+```blockmath
+a_t = \pi(x_t, o_t)
+```
 
-2. State Estimation (SES)
-The belief estimate evolves according to:
-    ŝ_t = SES(o_{1:t}, a_{1:t-1}; θ_t)
+---
 
-Uncertainty is tracked as:
-    Σ_t = Cov(ŝ_t)
+## 2. State Estimation System (SES)
 
-3. Information‑Gain Strategy (IGS)
-Expected information gain from action a:
-    IGS_t(a) = E[ I(ŝ_{t+1}; o_{t+1} | a, ŝ_t) ]
+Belief update:
+```blockmath
+\hat{s}_t = SES(o_{1:t}, a_{1:t-1}; \theta_t)
+```
 
-4. Risk‑Management System (RMS) with Tail‑Risk Term
-Risk is evaluated as:
-    RMS_t(a) = E[C(ŝ_{t+1}, a)] + λ_tail · CVaR_α(C)
+Uncertainty propagation:
+```blockmath
+\Sigma_t = \mathrm{Cov}(\hat{s}_t)
+```
 
-5. Model‑Update System (MUS)
-Internal model parameters update via:
-    θ_{t+1} = MUS(θ_t, o_{t+1}, a_t)
+---
 
-6. Unified Objective
+## 3. Information‑Gain Strategy (IGS)
+
+Expected information gain from action `\( a \)`:
+```blockmath
+IGS_t(a) = \mathbb{E}\left[ I(\hat{s}_{t+1}; o_{t+1} \mid a, \hat{s}_t) \right]
+```
+
+---
+
+## 4. Risk‑Management System (RMS)
+
+Risk expectation:
+```blockmath
+RMS_t(a) = \mathbb{E}[C(\hat{s}_{t+1}, a)]
+```
+
+Tail‑risk penalty:
+```blockmath
+RMS_t(a) \leftarrow RMS_t(a) + \lambda_{\text{tail}} \cdot CVaR_\alpha(C)
+```
+
+---
+
+## 5. Model‑Update System (MUS)
+
+Parameter update:
+```blockmath
+\theta_{t+1} = MUS(\theta_t, o_{t+1}, a_t)
+```
+
+Gradient form:
+```blockmath
+\theta_{t+1} = \theta_t - \eta_\theta \nabla_\theta L(\theta_t)
+```
+
+---
+
+## 6. Unified Objective Function
+
 Weights:
-• α_t = exploration weight
-• β_t = risk weight
-• γ_t = action‑cost weight
+- `\( \alpha_t \)`: exploration  
+- `\( \beta_t \)`: risk  
+- `\( \gamma_t \)`: action cost  
 
-Objective:
-    J_t(a) = α_t·IGS_t(a) − β_t·RMS_t(a) − γ_t·Cost(a)
+Unified objective:
+```blockmath
+J_t(a) = \alpha_t \cdot IGS_t(a) - \beta_t \cdot RMS_t(a) - \gamma_t \cdot Cost(a)
+```
 
 Raw action:
-    a_t_raw = argmax_a J_t(a)
+```blockmath
+a_{t}^{raw} = \arg\max_a J_t(a)
+```
 
-7. Integrative Coherence Condition (ICC)
+---
+
+## 7. Integrative Coherence Condition (ICC)
+
 Coherence score:
-    κ_t = ICC(ŝ_t, θ_t, IGS_t, RMS_t)
+```blockmath
+\kappa_t = ICC(\hat{s}_t, \theta_t, IGS_t, RMS_t)
+```
 
-Condition:
-• κ_t ≥ τ_ICC → coherent
-• κ_t < τ_ICC → controllers intervene
+Coherence condition:
+- `\( \kappa_t \ge \tau_{ICC} \)`: coherent  
+- `\( \kappa_t < \tau_{ICC} \)`: controllers intervene  
 
-8. Dual Error Channels
+---
+
+## 8. Global Coherence Constraint (GCC)
+
+Global alignment penalty:
+```blockmath
+GCC_t = \lambda_{GCC} \cdot D(\hat{s}_t, \theta_t)
+```
+
+Unified objective with GCC:
+```blockmath
+J_t^{full}(a) = J_t(a) - GCC_t
+```
+
+---
+
+## 9. Dual Error Channels
+
 Model error:
-    E_model_t = || ŝ_{t+1} − s_{t+1} ||
+```blockmath
+E^{model}_t = \| \hat{s}_{t+1} - s_{t+1} \|
+```
 
 Environment drift:
-    E_env_t = D_KL( p(o_t) || p(o_{t−1}) )
+```blockmath
+E^{env}_t = D_{KL}(p(o_t) \parallel p(o_{t-1}))
+```
 
 Routing:
-• High E_model_t → MUS/IGO correction
-• High E_env_t → TRP + reflex arc
+- High `\( E^{model}_t \)` → MUS/IGO  
+- High `\( E^{env}_t \)` → TRP + reflex arc  
 
-9. Meta‑Objective Discrepancy Signal
-Discrepancy:
-    D_t = distance(realized_outcomes_t, acceptable_outcome_band)
+---
+
+## 10. Discrepancy Signal
+
+Meta‑objective discrepancy:
+```blockmath
+D_t = d(\text{realized outcomes}_t, \text{acceptable band})
+```
 
 ASM update:
-    (α_{t+1}, β_{t+1}, γ_{t+1}) = ASM(α_t, β_t, γ_t, volatility_t, D_t)
+```blockmath
+(\alpha_{t+1}, \beta_{t+1}, \gamma_{t+1}) = ASM(\alpha_t, \beta_t, \gamma_t, volatility_t, D_t)
+```
 
-10. Controller Stack
+---
 
-10.1 Unified Action‑Model Controller (UAMC)
-    a_t_UAMC = UAMC(a_t_raw, κ_t, ŝ_t, θ_t)
+## 11. Controller Stack
 
-10.2 Threat‑Response Protocol (TRP)
+### 11.1 Unified Action‑Model Controller (UAMC)
+```blockmath
+a_t^{UAMC} = UAMC(a_t^{raw}, \kappa_t, \hat{s}_t, \theta_t)
+```
+
+### 11.2 Threat‑Response Protocol (TRP)
+
 Aggressive mode triggers when:
-    κ_t < τ_ICC_aggr OR w_t > w_max OR E_env_t high
+```blockmath
+\kappa_t < \tau_{ICC}^{aggr} \quad \text{or} \quad w_t > w_{max} \quad \text{or} \quad E^{env}_t \text{ high}
+```
 
 Parameter shifts:
-    α_t_aggr = λ_α α_t
-    β_t_aggr = λ_β β_t
-    γ_t_aggr = λ_γ γ_t
+```blockmath
+\alpha_t^{aggr} = \lambda_\alpha \alpha_t,\quad
+\beta_t^{aggr} = \lambda_\beta \beta_t,\quad
+\gamma_t^{aggr} = \lambda_\gamma \gamma_t
+```
 
 Adjusted action:
-    a_t_TRP = TRP(a_t_UAMC, κ_t, w_t, E_env_t)
+```blockmath
+a_t^{TRP} = TRP(a_t^{UAMC}, \kappa_t, w_t, E^{env}_t)
+```
 
-10.3 Adaptive Stability Mechanism (ASM)
-    (α, β, γ) updated using volatility_t and D_t
+### 11.3 Adaptive Stability Mechanism (ASM)
+Updates `\( (\alpha, \beta, \gamma) \)` using volatility and discrepancy.
 
-10.4 Proportional Policy Optimizer (PPO)
-Local refinement of a_t.
+### 11.4 Proportional Policy Optimizer (PPO)
+Local refinement of `\( a_t \)`.
 
-10.5 Iterative Gradient Operator (IGO)
-    θ_{t+1} = θ_t − η_θ ∇_θ L(θ_t)
+### 11.5 Iterative Gradient Operator (IGO)
+```blockmath
+\theta_{t+1} = \theta_t - \eta_\theta \nabla_\theta L(\theta_t)
+```
 
-10.6 Risk‑Mitigation Operator (RMO)
-    J_t_RMO(a) = J_t(a) − δ_t·max(0, RMS_t(a) − r_max)
+### 11.6 Risk‑Mitigation Operator (RMO)
+```blockmath
+J_t^{RMO}(a) = J_t(a) - \delta_t \cdot \max(0, RMS_t(a) - r_{max})
+```
 
-10.7 Stability‑Loss Operator (SLO)
-    ℓ_t = SLO(κ_{t−k:t}, volatility_{t−k:t})
+### 11.7 Stability‑Loss Operator (SLO)
+```blockmath
+\ell_t = SLO(\kappa_{t-k:t}, volatility_{t-k:t})
+```
 
-If ℓ_t > ℓ_crit → reflex arc and/or TRP
+If:
+```blockmath
+\ell_t > \ell_{crit}
+```
+then reflex arc and/or TRP activate.
 
-11. Modulators
+---
 
-11.1 Clarity Modulator
-    IGS_t_eff(a) = c_t · IGS_t(a)
-    Var(SES)_eff = Var(SES) / c_t
+## 12. Modulators
 
-11.2 Temporal Stability Modulator
-    η_{θ,t+1} = f_time(η_{θ,t}, volatility_t)
-    T_{t+1} = f_window(T_t, volatility_t)
+### 12.1 Clarity Modulator
+```blockmath
+IGS_t^{eff}(a) = c_t \cdot IGS_t(a)
+```
+```blockmath
+Var(SES)_{eff} = \frac{Var(SES)}{c_t}
+```
 
-12. Resource‑Stability Controller (RSC)
+### 12.2 Temporal Stability Modulator
+```blockmath
+\eta_{\theta,t+1} = f_{time}(\eta_{\theta,t}, volatility_t)
+```
+```blockmath
+T_{t+1} = f_{window}(T_t, volatility_t)
+```
+
+---
+
+## 13. Resource‑Stability Controller (RSC)
+
 Resource signal:
-    R_t = available compute/time/bandwidth
+```blockmath
+R_t = \text{available compute/time/bandwidth}
+```
 
-If R_t < R_min:
-    α_t → α_min
-    β_t → β_max
-    γ_t → γ_max
-    η_θ reduced
-    A → A_safe
+If `\( R_t < R_{min} \)`:
+```blockmath
+\alpha_t \rightarrow \alpha_{min},\quad
+\beta_t \rightarrow \beta_{max},\quad
+\gamma_t \rightarrow \gamma_{max},\quad
+\eta_\theta \rightarrow \eta_{\theta, safe}
+```
 
-13. Reflex Arc
+---
+
+## 14. Reflex Arc
+
 Trigger:
-    E_t > E_crit
+```blockmath
+E_t > E_{crit}
+```
 
 Actions:
-• α_t reduced
-• β_t increased
-• γ_t increased
-• c_t increased
+- `\( \alpha_t \)` reduced  
+- `\( \beta_t \)` increased  
+- `\( \gamma_t \)` increased  
+- `\( c_t \)` increased  
 
 Exit condition:
-    E_t ≤ E_stable AND ℓ_t ≤ ℓ_crit
+```blockmath
+E_t \le E_{stable} \quad \text{and} \quad \ell_t \le \ell_{crit}
+```
 
-14. Mode Variable
+---
+
+## 15. Mode Variable
+
 Discrete mode:
-    m_t ∈ { normal, defensive, reflex }
+```blockmath
+m_t \in \{ normal, defensive, reflex \}
+```
 
-15. Suspended‑Aliveness Diagnostic Regime
-    R_stable = {
-        (κ_t, volatility_t, E_t) |
-        κ_t ≥ τ_ICC_stable,
-        volatility_t ≤ v_stable,
-        E_t ≤ E_stable
-    }
+---
 
-16. Formal Degradation Invariant
+## 16. Suspended‑Aliveness Diagnostic Regime
+
+Stability region:
+```blockmath
+R_{stable} = \{ (\kappa_t, volatility_t, E_t) \mid \kappa_t \ge \tau_{ICC}^{stable},\; volatility_t \le v_{stable},\; E_t \le E_{stable} \}
+```
+
+---
+
+## 17. Degradation Invariant
+
 If:
-    κ_t → 0 OR volatility_t → ∞ OR R_t → 0
+```blockmath
+\kappa_t \rightarrow 0 \quad \text{or} \quad volatility_t \rightarrow \infty \quad \text{or} \quad R_t \rightarrow 0
+```
 
 Then:
-    α_t → α_min
-    β_t → β_max
-    γ_t → γ_max
-    A → A_safe
+```blockmath
+\alpha_t \rightarrow \alpha_{min},\quad
+\beta_t \rightarrow \beta_{max},\quad
+\gamma_t \rightarrow \gamma_{max},\quad
+A \rightarrow A_{safe}
+```
 
-17. Mathematical Guarantees
+---
+
+## 18. Mathematical Guarantees
+
 The architecture ensures:
-• bounded parameter updates
-• adaptive stability control
-• explicit constraint satisfaction
-• meta‑cognitive correction loops
-• compatibility with RL and control theory
-• interpretable regulatory behavior
-• guaranteed controlled‑conservative degradation under stress
+- bounded parameter updates  
+- adaptive stability control  
+- explicit constraint satisfaction  
+- meta‑cognitive correction loops  
+- compatibility with RL and control theory  
+- interpretable regulatory behavior  
+- guaranteed controlled‑conservative degradation under stress  
+
+---
+
+End of Mathematical Appendix
