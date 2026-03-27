@@ -8,5 +8,3 @@ systems-engineering
 research-framework
 architecture-design
 stability-models
-
-These are the recommended GitHub repository topics for ICA V1.a. They classify the project for engineers, researchers, and academic reviewers, improving discoverability and accurately reflecting the system’s scope and domain.
