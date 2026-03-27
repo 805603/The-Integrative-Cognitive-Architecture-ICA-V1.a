@@ -89,6 +89,7 @@ The unified objective combines operator outputs into a single decision criterion
 
 Action selection:
 
+
 ---
 
 # Integrative Coherence Condition (ICC)
@@ -192,3 +193,4 @@ ICA V1.a defines a unified, predictive, and mathematically grounded framework fo
 
 # Licensing Note
 This manuscript is protected under the Creative Commons Attribution–NoDerivatives 4.0 International License (CC BY‑ND 4.0). All code in this repository is licensed under the MIT License. See LICENSE, LICENSE-DOCS, COPYRIGHT, and NOTICE for full terms.
+
