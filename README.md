@@ -1,127 +1,186 @@
-ICA V1.a — Integrative Cognitive Architecture
 
-A Unified, Mathematically Grounded, Empirically Falsifiable Theory of Cognitive Stability
+# ICA V1.a — Integrative Cognitive Architecture
 
-This repository contains the complete ICA V1.a architecture, a framework for predicting system coherence and failure modes under uncertainty. ICA formalizes cognition as a joint optimization of controller outputs, making it predictive, mathematically grounded, and empirically testable.
+A unified, mathematically grounded, empirically falsifiable theory of
+cognitive stability. This repository contains the complete ICA V1.a
+architecture, a framework for predicting system coherence and failure
+modes under uncertainty. ICA formalizes cognition as a joint optimization
+of controller outputs, making it predictive, mathematically grounded,
+and empirically testable.
 
-⸻
+---
 
-📖 Recommended Reading Path
+## Recommended Reading Path
 
-To navigate this repository efficiently:
-	1.	Start Here — High-Level Overview
-ICA-V1a-Manuscript.md
-Conceptual, philosophical, and structural explanation of ICA. Begin here to understand the architecture’s ideas.
-	2.	Core Technical Specification
-ICA-V1a-Specification.md
-Formal definition including operators, invariants, controller logic, and mathematical framing.
-	3.	Visual Understanding
-ICA-V1a-Operator-Diagram.md
-Visual map showing component interactions.
-	4.	Academic Context (Optional)
-ICA-V1a-Academic.md
-Explains ICA’s placement in research and highlights its novelty.
-	5.	Implementation Notes (Optional)
-ICA-V1a-Implementation-Notes.md
-Practical guidance for building ICA in real systems.
-	6.	Deployment Notes (Optional)
-ICA-V1a-Deployment-Notes.md
-Operational guidance, stability considerations, and real-world behavior.
-	7.	Mathematical Appendix (Optional Deep Dive)
-ICA-V1a-Math-Appendix.md
-Detailed derivations and formal mathematical expansions.
+1. **High‑Level Overview**  
+   `ICA‑V1a‑Manuscript.md`  
+   Conceptual and structural explanation of ICA.
 
-⸻
+2. **Core Technical Specification**  
+   `ICA‑V1a‑Technical‑Specification.md`  
+   Formal definitions, operators, objective, coherence conditions,
+   controller dynamics, and stability framing.
 
-⏱ Quick Start: 10-Minute Overview
-	•	Read the first sections of ICA-V1a-Manuscript.md
-	•	Review ICA-V1a-Operator-Diagram.md
+3. **Visual Architecture Map**  
+   `ICA‑V1a‑Operator‑Diagram.md`  
+   Shows subsystem layout, operator interactions, and coherence pathways.
 
-This gives a concise understanding of ICA’s structure and purpose.
+4. **Scaling Hierarchy (1‑D → 2‑D → 3‑D)**  
+   `ICA‑V1a‑Scaling‑Hierarchy.md`  
+   Defines the canonical cognitive models and how ICA scales across
+   dimensionality and embodiment.
 
-⸻
+5. **Mathematical Appendix (Deep Dive)**  
+   `ICA‑V1a‑Math‑Appendix.md`  
+   Formal derivations, gradient structure, stability proofs, and
+   coherence math.
 
-🔬 Controller-Layer Operators
-Operator
-Purpose
-UAMC
-Signal Clarity Modulation
-ICC
-Global Coherence Constraint
-ASM
-Uncertainty-Sensitivity Modulation
-TRP
-Targeted Uncertainty Reduction
-PPO
-Policy-Prior Organization
-IGO
-Integration of Structural Gradients
-RMO
-Risk-Modulation Operator
-SLO
-Long-Horizon Stability Operator
+6. **Implementation Notes**  
+   `ICA‑V1a‑Implementation‑Notes.md`  
+   Engineering guidance for instantiating ICA in RL and cognitive
+   systems.
 
-🎯 Unified Objective Function
+7. **Deployment Notes**  
+   `ICA‑V1a‑Deployment‑Notes.md`  
+   Safe‑mode, escalation, uncertainty handling, and real‑world behavior.
 
-ICA formalizes cognition as joint optimization of all controller outputs, producing a single, analyzable objective rather than separate heuristics.
+---
 
-⸻
+## Quick Start (10 Minutes)
 
-⚙️ Explicit Controller Suite
+- Read the opening sections of `ICA‑V1a‑Manuscript.md`
+- Review `ICA‑V1a‑Operator‑Diagram.md`
 
-Predicts system behavior under uncertainty, including:
-	•	Instability during exploration
-	•	Oscillations or collapse
-	•	Safe- or aggressive-mode transitions
-	•	Recovery of stability
+This provides a concise understanding of ICA’s structure and purpose.
 
-ICA is predictive rather than descriptive.
+---
 
-⸻
+## Controller‑Layer Operators
 
-🧪 Evaluation Models
+ICA’s controller suite defines how the system behaves under uncertainty,
+risk, and structural change.
 
-ICA is tested in progressively richer environments:
-	1.	1-D Toy Model — Demonstrations of basic dynamics
-	2.	2-D Interaction Model — Multi-component interactions
-	3.	3-D Embodied Model — Full physical/embodied simulations
+| Operator | Purpose |
+|---------|---------|
+| **UAMC** | Signal clarity modulation |
+| **ASM**  | Uncertainty‑sensitivity modulation |
+| **TRP**  | Targeted uncertainty reduction |
+| **PPO**  | Policy‑prior organization |
+| **IGO**  | Integration of structural gradients |
+| **RMO**  | Risk‑modulation operator |
+| **SLO**  | Long‑horizon stability operator |
+| **ICC**  | Local coherence constraint |
+| **GCC**  | Global alignment condition |
 
-Each environment exposes stability windows, coherence properties, and failure modes.
+These operators jointly determine stability, coherence, and adaptive
+behavior.
 
-⸻
+---
 
-✅ Derived Stability Result
-	•	RMO is essential for stability.
-	•	Systems without RMO show: runaway exploration, adversarial collapse, long-horizon incoherence, and failure to recover from Black Swan events.
-	•	This is an empirically falsifiable prediction.
+## Unified Objective Function
 
-⸻
+ICA formalizes cognition as a **single joint optimization** over all
+controller outputs. This produces a unified, analyzable objective rather
+than a collection of heuristics.
 
-📊 Evidence in This Repository
-	•	1-D toy model demonstrations
-	•	Stability windows and hysteresis analysis
-	•	Black Swan stress tests
-	•	Controller-layer predictions
-	•	Mathematical derivations of coherence condition
-	•	Operator-interaction analysis across the full controller suite
+The unified objective integrates:
+- clarity
+- uncertainty
+- targeted uncertainty reduction
+- priors
+- structural gradients
+- risk
+- long‑horizon stability
+- local coherence (ICC penalty)
 
-⸻
+This structure makes ICA predictive and mathematically grounded.
 
-🌟 Why ICA Matters
-	•	Provides a scientific theory of cognitive architecture
-	•	Makes precise, testable claims
-	•	Offers replicable tests and mathematical structure
-	•	Predicts instability and failure modes under uncertainty
+---
 
-⸻
+## Explicit Controller Suite
 
-📚 Citation
+ICA predicts system behavior under uncertainty, including:
+- instability during exploration
+- oscillation or collapse
+- safe‑mode or aggressive‑mode transitions
+- recovery or failure to recover
+- long‑horizon coherence or incoherence
 
-If referencing ICA V1.a in academic work, cite this repository as the canonical source.
+These predictions are testable across all evaluation models.
 
-⸻
+---
 
-📝 Licensing
-	•	Code: MIT License (LICENSE)
-	•	Documentation: CC BY-ND 4.0 (LICENSE-DOCS)
-	•	See NOTICE for a summary of mixed-license terms
+## Evaluation Models
+
+ICA is evaluated in progressively richer environments:
+
+### 1. 1‑D Toy Model
+- continuous state
+- Gaussian noise
+- interpretable dynamics
+- clear stability windows
+
+### 2. 2‑D Interaction Model
+- spatial uncertainty gradients
+- directional risk
+- multi‑operator interactions
+
+### 3. 3‑D Embodied Model
+- sensorimotor coupling
+- adversarial perturbations
+- long‑horizon stability tracking
+
+Each environment exposes coherence properties and failure modes.
+
+---
+
+## Derived Stability Result
+
+- **RMO is essential for stability.**
+- Systems without RMO exhibit:
+  - runaway exploration
+  - adversarial collapse
+  - long‑horizon incoherence
+  - failure to recover from Black Swan events
+
+This is an empirically falsifiable prediction.
+
+---
+
+## Evidence in This Repository
+
+The repository includes:
+- 1‑D toy model demonstrations
+- stability windows and hysteresis analysis
+- Black Swan stress tests
+- controller‑layer predictions
+- mathematical derivations of the coherence condition
+- operator‑interaction analysis across the full controller suite
+
+---
+
+## Why ICA Matters
+
+ICA provides:
+- a scientific theory of cognitive architecture
+- precise, testable claims
+- reproducible stability predictions
+- mathematically defined operator interactions
+- a unified objective for cognitive control
+- a framework for predicting failure modes under uncertainty
+
+---
+
+## Citation
+
+If referencing ICA V1.a in academic work, cite this repository as the
+canonical source.
+
+---
+
+## Licensing
+
+- **Code:** MIT License (`LICENSE`)
+- **Documentation:** CC BY‑ND 4.0 (`LICENSE-DOCS`)
+- See `NOTICE` for a summary of included materials.
+
