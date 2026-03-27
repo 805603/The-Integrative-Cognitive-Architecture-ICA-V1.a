@@ -1,5 +1,5 @@
-# The Integrative Cognitive Architecture (ICA V1.a)
 
+# The Integrative Cognitive Architecture (ICA V1.a)
 
 ## Architecture Overview
 
@@ -8,12 +8,12 @@
 This folder contains the complete definition of ICA V1.a:
 
 - **os-layer.md** – The coherence engine and global integrator  
-- **operators.md** – Awareness, Curiosity, Compassion, Knowledge  
-- **modulators.md** – Gain, timing, grounding, uncertainty weighting  
-- **regulators.md** – ICC, ASM, PPO, RMO, SLO, Noise Gate, Dampener  
-- **diagnostics.md** – Coherence monitoring, hysteresis, signal quality  
+- **operators.md** – SCO, URO, RCO, MIO (Signal Clarity, Uncertainty Reduction, Risk Constraint, Model Integration)  
+- **modulators.md** – Gain control, timing, grounding sensitivity, uncertainty weighting  
+- **regulators.md** – ICC, UAMC, ASM, PPO, RMO, SLO, Noise Gate, Dampener  
+- **diagnostics.md** – Coherence monitoring, hysteresis tracking, signal‑quality metrics  
 - **reflex-arc.md** – Trigger → Cue → Completion → Stabilization  
-- **suspended-aliveness.md** – The architecture’s optimal coherence state  
+- **stability-baseline.md** – The architecture’s optimal coherence state  
 - **module-admission-rule.md** – Safety and coherence gating  
 - **vertical-stack.md** – The full hierarchical layout  
 
@@ -21,16 +21,18 @@ This folder contains the complete definition of ICA V1.a:
 
 Text specifications for all system diagrams:
 
-- **system-overview.md**  
-- **reflex-arc.md**  
-- **vertical-stack.md**  
-- **operator-flow.md**  
-- **regulation-flow.md**  
-- **coherence-loop.md**  
+- system-overview.md  
+- reflex-arc.md  
+- vertical-stack.md  
+- operator-flow.md  
+- regulation-flow.md  
+- coherence-loop.md  
 
 These files define the visual structure of ICA V1.a for future rendering.
 
-### docs/
+---
+
+## docs/
 
 Includes:
 
@@ -40,16 +42,20 @@ Includes:
 - **COPYRIGHT** – Copyright statement  
 - **NOTICE** – Notices required for distribution  
 
+---
+
 ## Licensing
 
-This repository uses a **dual‑license structure**:
+This repository uses a dual‑license structure:
 
 - **LICENSE** governs the architecture, code, and technical content.  
 - **LICENSE-DOCS** governs the documentation, diagrams, and written explanations.  
 - **COPYRIGHT** asserts authorship and ownership.  
-- **NOTICE** provides required legal notices for redistribution.
+- **NOTICE** provides required legal notices for redistribution.  
 
-All licensing files are already included in the repository root and apply to this README as well.
+All licensing files are included in the repository root and apply to this README as well.
+
+---
 
 ## Intended Audience
 
@@ -64,15 +70,21 @@ ICA V1.a is written for:
 
 The system is designed to be both conceptually clear and operationally precise.
 
+---
+
 ## Status
 
 ICA V1.a is complete, stable, and ready for academic review, engineering translation, and deployment‑oriented exploration.
+
+---
 
 ## Citation
 
 If referencing ICA V1.a in academic or technical work:
 
-**Meehan, Sean. _The Integrative Cognitive Architecture (ICA V1.a)._ 2026.**
+**Meehan, Sean. *The Integrative Cognitive Architecture (ICA V1.a).* 2026.**
+
+---
 
 ## Contact
 
