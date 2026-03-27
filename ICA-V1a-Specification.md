@@ -27,8 +27,8 @@ Figure placeholder: Operator Suite → GCC → Objective → Loop
 ICA assumes:
 - A system interacts with an environment producing o_t, a_t, x_t.
 - Uncertainty is measurable through internal signals.
-- Operators act on internal representations, not raw sensory data.
-- Stability = bounded divergence of internal states over time.
+- Operators act on internal representations.
+- Stability = bounded divergence of internal states.
 - The system optimizes a unified objective under a coherence constraint.
 
 ---
@@ -152,7 +152,7 @@ State update:
 x_{t+1} = f(x_t, a_t) + η_t
 ```
 
-Where η_t is noise (Gaussian or environment‑specific).
+η_t is noise (Gaussian or environment‑specific).
 
 State divergence:
 ```
