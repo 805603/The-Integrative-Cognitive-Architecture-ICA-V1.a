@@ -5,8 +5,8 @@
 ICA V1.a is the first complete, stable, and academically structured release of the Integrative Cognitive Architecture. This version consolidates all architectural layers, diagram specifications, documentation, and licensing into a coherent, professionally organized system suitable for research, engineering interpretation, and academic review.
 
 ## Included in This Release
-- Full architecture layer: operators, modulators, regulators, diagnostics, reflex arc, suspended‑aliveness baseline, vertical stack, OS layer, and module admission rule.
-- Complete diagram specifications for system overview, operator flow, regulation flow, coherence loop, reflex arc, and vertical stack.
+- Full architecture layer: SCO, URO, RCO, MIO; modulators; regulators; diagnostics; reflex arc; stability baseline; vertical stack; OS layer; and module‑admission rule.  
+- Complete diagram specifications for system overview, operator‑flow, regulation‑flow, coherence‑loop, reflex‑arc, and vertical‑stack diagrams.  
 - Documentation suite including the orientation guide and all licensing files.
 
 ## Stability
