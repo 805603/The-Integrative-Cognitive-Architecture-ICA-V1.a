@@ -1,3 +1,2 @@
 The Integrative Cognitive Architecture (ICA V1.a)
-
-A coherence‑first cognitive architecture integrating operators, modulators, regulators, diagnostics, and embodied grounding into a unified, stability‑anchored system for research, engineering, and academic evaluation.
+A coherence‑first cognitive architecture integrating operators...
