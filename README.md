@@ -1,4 +1,65 @@
+## How to Navigate This Repository
 
+This repository contains the complete ICA V1.a architecture. To make your
+review as smooth as possible, here is the recommended reading path:
+
+### 1. Start Here — High-Level Overview
+- **ICA-V1a-Manuscript.md**  
+  This is the narrative explanation of the architecture. If you want to
+  understand ICA conceptually, philosophically, and structurally, start here.
+
+### 2. Core Technical Specification
+- **ICA-V1a-Specification.md**  
+  This is the formal, technical definition of ICA. It contains the operators,
+  invariants, controller logic, and mathematical framing.
+
+### 3. Visual Understanding
+- **ICA-V1a-Operator-Diagram.md**  
+  A visual map of the system. This helps you see how the components interact.
+
+### 4. Academic Context (Optional)
+- **ICA-V1a-Academic.md**  
+  This file explains how ICA fits into existing research landscapes and why
+  the architecture is novel.
+
+### 5. Implementation Notes (Optional)
+- **ICA-V1a-Implementation-Notes.md**  
+  Practical considerations for building ICA in real systems.
+
+### 6. Deployment Notes (Optional)
+- **ICA-V1a-Deployment-Notes.md**  
+  Guidance for real-world use, stability considerations, and operational
+  behavior.
+
+### 7. Mathematical Appendix (Optional Deep Dive)
+- **ICA-V1a-Math-Appendix.md**  
+  Detailed mathematical expansions, derivations, and formalism.
+
+---
+
+### Licensing
+- **LICENSE** — MIT License for all code.
+- **LICENSE-DOCS** — CC BY-ND 4.0 for all written materials.
+- **COPYRIGHT** — Ownership declaration.
+- **NOTICE** — Mixed-license explanation.
+
+---
+
+### If You Only Have 10 Minutes
+Read:
+1. **ICA-V1a-Manuscript.md** (first few sections)
+2. **ICA-V1a-Operator-Diagram.md**
+
+This gives you the essence of ICA quickly.
+
+---
+
+### If You Want the Full Picture
+Follow the reading path above in order.
+
+This structure is designed to make ICA V1.a easy to understand, whether you
+are a researcher, engineer, or reviewer.
+-----------------------------------------------
 Integrative Cognitive Architecture (ICA)
 
 A Unified, Mathematically Grounded, Empirically Falsifiable Theory of Cognitive Stability
