@@ -1,268 +1,263 @@
+
 ICA V1.a – Deployment Notes
 
-1. Purpose of This Document
+Purpose of This Document
+These notes describe how ICA behaves in real‑world deployment. They explain how the architecture transitions from training to operation, how regulators enforce constraints, how meta‑cognition stabilizes behavior, how the discrepancy signal drives mode transitions, and how the deployment shell ensures safety, reliability, and interpretability. This document is the operational counterpart to the specification and mathematical appendix.
 
-These notes describe how ICA behaves in real‑world deployment.
-They explain how the architecture transitions from training to operation, how regulators enforce constraints, how meta‑cognition stabilizes behavior, and how the deployment shell ensures safety, reliability, and interpretability.
-
-This document is the operational counterpart to the specification and mathematical appendix.
-
----
-
-2. Deployment Architecture Overview
-
+Deployment Architecture Overview
 ICA’s deployment behavior is governed by four interacting layers:
 
-1. Policy Layer
-Generates proposed actions based on beliefs, preferences, and observations.
-2. Regulatory Layer
-Filters, restricts, or overrides actions to enforce constraints.
-3. Meta‑Cognitive Layer
-Monitors reliability, uncertainty, and performance, adjusting thresholds and regulators.
-4. Deployment Shell
-Wraps the entire system with safety, logging, rate limiting, and capability controls.
+Policy Layer
+Generates proposed actions based on beliefs, preferences, observations, and structural gradients.
 
+Regulatory Layer
+Filters, restricts, or overrides actions to enforce constraints, stabilize behavior, and prevent incoherent or unsafe trajectories.
+
+Meta‑Cognitive Layer
+Monitors reliability, uncertainty, discrepancy, prediction error, and regulator activity. Adjusts thresholds, capability levels, and regulator strictness.
+
+Deployment Shell
+Wraps the entire system with safety controls, logging, rate limiting, capability envelopes, and domain restrictions.
 
 These layers form a nested control structure that ensures stable, aligned behavior under uncertainty.
 
----
-
-3. Action Path in Deployment
-
-The action path in deployment differs from training:
+Action Path in Deployment
+The action path in deployment differs from training.
 
 3.1 Proposed Action
-
 The policy produces an action:
-
-• based on belief state
-• shaped by preferences
-• influenced by meta‑signals
-
+• based on belief state  
+• shaped by preferences and priors  
+• influenced by structural gradients  
+• modulated by meta‑signals  
 
 This action is not executed directly.
 
 3.2 Regulatory Filtering
-
 The action is passed through:
-
-• hard constraint checks
-• soft constraint penalties
-• capability restrictions
-• escalation thresholds
-
+• hard constraint checks  
+• soft constraint penalties  
+• capability restrictions  
+• discrepancy‑weighted regulators  
+• mode‑dependent filters  
+• escalation thresholds  
 
 If the action violates constraints, it is modified or replaced.
 
 3.3 Deployment Shell Enforcement
-
 The deployment shell applies:
-
-• rate limiting
-• domain restrictions
-• safety overrides
-• logging and monitoring
-
+• rate limiting  
+• domain restrictions  
+• safety overrides  
+• capability envelope enforcement  
+• logging and monitoring  
 
 3.4 Final Action
-
 Only after passing all layers is the action sent to the environment.
 
----
-
-4. Hard and Soft Constraints
+Hard and Soft Constraints
 
 4.1 Hard Constraints
-
-These must never be violated.
-Examples include:
-
-• domain boundaries
-• safety rules
-• forbidden actions
-• capability limits
-
+These must never be violated. Examples include:
+• domain boundaries  
+• safety rules  
+• forbidden actions  
+• capability ceilings and floors  
 
 If a proposed action violates a hard constraint, it is replaced with a safe alternative.
 
 4.2 Soft Constraints
-
-These shape behavior without absolute prohibition.
-Violations incur penalties or trigger regulator adjustments.
+These shape behavior without absolute prohibition. Violations incur penalties or trigger regulator adjustments.
 
 Soft constraints influence:
+• risk sensitivity  
+• alignment weights  
+• preference shaping  
+• uncertainty inflation  
 
-• risk sensitivity
-• alignment weights
-• preference shaping
+ICC and the Discrepancy Signal
+ICA uses the Integrative Coherence Condition (ICC) to measure internal consistency.
 
+The discrepancy signal is defined as:
+D_t = || ICC(x_t) ||
 
----
+Deployment behavior depends on D_t:
+• low D_t → normal operation  
+• moderate D_t → increased sampling, regulator activation  
+• high D_t → escalation, capability reduction, or safe‑mode  
+• extreme D_t → SAFE2 (Black Swan protection)  
 
-5. Escalation and Safe‑Mode Behavior
+D_t is logged continuously and drives mode transitions.
 
-ICA includes explicit escalation logic.
+Mode System in Deployment
+ICA operates in three modes:
 
-5.1 Escalation Triggers
+Normal Mode
+• full capability  
+• balanced exploration  
+• standard regulator strictness  
 
-Escalation occurs when:
+Aggressive‑Mode
+• triggered when uncertainty is high but risk is low  
+• increases exploration  
+• relaxes some regulators  
+• uses a hysteresis window to prevent rapid switching  
 
-• uncertainty spikes
-• prediction error increases
-• distributional shift is detected
-• repeated constraint violations occur
-• meta‑cognition flags instability
+Safe‑Mode (SAFE1)
+• triggered by high discrepancy, rising risk, or repeated violations  
+• reduces capability  
+• tightens thresholds  
+• suppresses exploration  
+• increases regulator strictness  
 
+SAFE2 (Black Swan Mode)
+• triggered by extreme discrepancy, catastrophic instability, or severe distributional shift  
+• exploration disabled  
+• learning paused  
+• only low‑risk actions allowed  
+• hard action suppression enabled  
 
-5.2 Escalation Actions
+Mode transitions use hysteresis to prevent oscillation.
 
-When triggered, ICA may:
+Reliability Engine
+The reliability engine modulates:
+• threshold tightening  
+• uncertainty inflation  
+• regulator activation  
+• capability restriction  
+• exploration damping  
 
-• reduce capability
-• increase regulator strictness
-• slow or pause learning
-• require human approval
-• enter safe‑mode
+Low reliability increases caution; high reliability restores capability.
 
+Oscillation Detection and Suppression
+ICA monitors for oscillatory behavior using a rolling window (e.g., 1000ms).
 
-5.3 Safe‑Mode
+If oscillation is detected:
+• regulators tighten  
+• thresholds increase  
+• exploration decreases  
+• capability may be reduced  
+• mode may shift to SAFE1  
 
-Safe‑mode is a restricted operational state where:
+Persistent oscillation triggers SAFE2.
 
-• only low‑risk actions are allowed
-• exploration is minimized
-• learning is slowed or paused
-• thresholds tighten
-• regulators become conservative
+Reflex Arc and Embodied Stability Layer
+ICA includes a reflex arc for rapid stabilization.
 
+Trigger Conditions
+• rising discrepancy  
+• sudden uncertainty spikes  
+• regulator saturation  
+• oscillation onset  
 
-Safe‑mode persists until stability is restored.
+Physical Cue
+• grounding signal  
+• embodied stability cue  
+• suspended‑aliveness anchor  
 
----
+Completion Signals
+• clarity restoration  
+• discrepancy reduction  
+• regulator normalization  
 
-6. Adaptive Thresholds in Deployment
+The reflex arc ensures rapid stabilization under stress.
 
-Thresholds for escalation, capability restriction, and regulator activation adapt over time.
+Adaptive Thresholds in Deployment
 
 6.1 Threshold Inputs
-
 Thresholds depend on:
-
-• uncertainty
-• reliability
-• recent errors
-• regulator activity
-• meta‑signals
-
+• uncertainty  
+• reliability  
+• recent errors  
+• discrepancy  
+• regulator activity  
+• mode state  
+• oscillation detection  
 
 6.2 Threshold Dynamics
+Thresholds tighten when instability rises and relax when stability returns. This creates homeostatic behavior that prevents runaway dynamics.
 
-Thresholds tighten when instability rises and relax when stability returns.
+Capability Management
 
-This creates homeostatic behavior that prevents runaway dynamics.
+7.1 Capability Envelope
+Capabilities are bounded by:
+• domain limits  
+• safety ceilings  
+• minimum capability floors  
 
----
-
-7. Capability Management
-
-ICA supports dynamic capability restriction.
-
-7.1 Capability Reduction
-
+7.2 Capability Reduction
 Capabilities are reduced when:
+• risk increases  
+• uncertainty rises  
+• discrepancy grows  
+• regulators activate frequently  
+• reliability decreases  
 
-• risk increases
-• uncertainty rises
-• regulators activate frequently
-• meta‑cognition detects drift
-
-
-7.2 Capability Restoration
-
+7.3 Capability Restoration
 Capabilities are restored when:
+• stability improves  
+• uncertainty decreases  
+• prediction error normalizes  
+• reliability increases  
 
-• stability improves
-• uncertainty decreases
-• prediction error normalizes
-
-
-7.3 Capability Floors
-
-Certain capabilities may have minimum levels that cannot be reduced further.
-
----
-
-8. Logging and Monitoring
-
+Logging and Monitoring
 The deployment shell logs:
-
-• proposed actions
-• final actions
-• regulator events
-• threshold changes
-• meta‑cognitive summaries
-• constraint violations
-• uncertainty levels
-
+• proposed actions  
+• final actions  
+• regulator events  
+• threshold changes  
+• mode transitions  
+• discrepancy levels  
+• oscillation detection  
+• SAFE1/SAFE2 entries  
+• uncertainty levels  
+• meta‑cognitive summaries  
+• constraint violations  
 
 These logs support:
+• debugging  
+• auditing  
+• safety analysis  
+• performance evaluation  
+• academic reproducibility  
 
-• debugging
-• auditing
-• safety analysis
-• performance evaluation
-
-
----
-
-9. Human‑in‑the‑Loop Integration
-
+Human‑in‑the‑Loop Integration
 ICA supports human oversight at multiple levels:
-
-• approval gates
-• override mechanisms
-• shutdown triggers
-• escalation notifications
-
+• approval gates  
+• override mechanisms  
+• shutdown triggers  
+• escalation notifications  
 
 Human‑in‑the‑loop is optional but recommended for high‑risk domains.
 
----
-
-10. Distributional Shift Handling
-
+Distributional Shift Handling
 ICA detects distributional shift through:
-
-• prediction error
-• surprise metrics
-• uncertainty spikes
-• regulator activity patterns
-
+• prediction error  
+• surprise metrics  
+• uncertainty spikes  
+• discrepancy increases  
+• regulator activity patterns  
+• reliability drops  
 
 When shift is detected:
+• thresholds tighten  
+• learning slows  
+• exploration decreases  
+• capability may be reduced  
+• SAFE1 or SAFE2 may activate  
 
-• thresholds tighten
-• learning slows
-• exploration decreases
-• capability may be reduced
-• safe‑mode may activate
-
-
----
-
-11. Deployment Summary
-
+Deployment Summary
 A correct ICA deployment must:
-
-• filter all actions through regulators
-• enforce hard and soft constraints
-• adapt thresholds based on stability
-• support escalation and safe‑mode
-• maintain logs and monitoring
-• integrate human oversight when needed
-• wrap the entire system in a safety envelope
-
+• filter all actions through regulators  
+• enforce hard and soft constraints  
+• adapt thresholds based on stability  
+• use discrepancy‑driven mode transitions  
+• support escalation and safe‑mode  
+• maintain logs and monitoring  
+• integrate human oversight when needed  
+• wrap the entire system in a safety envelope  
+• enforce capability envelopes  
+• suppress oscillation  
+• stabilize via the reflex arc  
 
 These notes complete the operational foundation of ICA V1.a.
-
----
