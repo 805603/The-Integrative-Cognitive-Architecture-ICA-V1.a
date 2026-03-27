@@ -1,203 +1,206 @@
-How to Read ICA V1.a
 
-A structured guide for researchers, engineers, and cognitive‑systems practitioners
+# How to Read ICA V1.a
 
-Purpose of This Guide
-
-ICA V1.a is a complete cognitive architecture with multiple interacting documents and a three‑layer scaling hierarchy (1‑D, 2‑D, 3‑D).
-This guide explains how to navigate the repository, how the documents relate, and the correct reading order for understanding ICA at depth.
+A structured guide for researchers, engineers, and cognitive‑systems
+practitioners. This guide explains how to navigate the ICA V1.a repository,
+how the documents relate, and the correct reading order for understanding
+the architecture at depth.
 
 ---
 
-1. Begin With the High‑Level Architecture
+## Purpose of This Guide
 
-Start with:
+ICA V1.a is a complete cognitive architecture with multiple interacting
+documents and a three‑level scaling hierarchy (1‑D, 2‑D, 3‑D). This guide
+shows how to read the repository in a coherent, efficient order.
 
-ICA‑V1a‑Specification.md
+---
+
+## Start With the Technical Specification
+
+Open:
+```
+ICA‑V1a‑Technical‑Specification.md
+```
 
 This introduces:
-
-• the core operators
-• modulators
-• regulators
-• controller layers
-• the unified objective
-• the scaling hierarchy
-
+- the operator suite (UAMC, ASM, TRP, PPO, IGO, RMO, SLO, ICC)
+- the unified objective
+- the Global Coherence Constraint (GCC)
+- controller dynamics
+- stability conditions
+- evaluation models
 
 This is the conceptual backbone of ICA.
 
 ---
 
-2. Use the Operator Diagram as Your Map
+## Use the Operator Diagram as Your Map
 
 Open:
-
+```
 ICA‑V1a‑Operator‑Diagram.md
+```
 
 This shows:
+- subsystem layout
+- information flow
+- operator interactions
+- coherence pathways
+- stability structure
 
-• subsystem layout
-• information flow
-• operator interactions
-• regulatory pathways
-
-
-Keep this open while reading the specification — it’s the architectural map.
+Keep this open while reading the specification.
 
 ---
 
-3. Understand the Scaling Hierarchy (1‑D, 2‑D, 3‑D)
+## Understand the Scaling Hierarchy (1‑D → 2‑D → 3‑D)
 
-ICA is defined across three canonical cognitive models, each adding structure and embodiment:
+ICA is defined across three canonical cognitive models. Each adds structure,
+dimensionality, and embodiment.
 
-1‑D Model (Analytic Toy Environment)
+### 1‑D Model (Analytic Toy Environment)
+- continuous state
+- Gaussian noise
+- Gaussian belief
+- uncertainty, risk, structural gradients
+- unified objective behavior
 
-• continuous state
-• Gaussian noise
-• Gaussian belief
-• awareness, curiosity, compassion
-• unified policy
-• interpretable dynamics
+This is the simplest demonstration of ICA’s internal logic.
 
-
-This is the simplest, cleanest demonstration of ICA’s internal logic.
-
-2‑D Model (Structured Cognitive Plane)
-
-• spatial representation
-• richer uncertainty patterns
-• multi‑operator interactions
-• visualizable dynamics
-
+### 2‑D Model (Structured Cognitive Plane)
+- spatial representation
+- directional risk
+- uncertainty gradients
+- multi‑operator interactions
 
 This shows how ICA scales beyond toy examples.
 
-3‑D Model (Embodied Cognitive System)
-
-• full embodiment
-• sensorimotor loops
-• environmental coupling
-• real‑world constraints
-
+### 3‑D Model (Embodied Cognitive System)
+- full embodiment
+- sensorimotor loops
+- environmental coupling
+- long‑horizon stability
 
 This is the deployment‑grade cognitive model.
 
 All three models are canonical and permanent.
-They demonstrate ICA’s scalability and coherence across levels of complexity.
 
 ---
 
-4. Study the Controller Layers
+## Study the Controller Layers
 
-ICA’s adaptive control components — ICC, UAMC, TRP, ASM, and others — define how the system behaves under uncertainty.
+ICA’s adaptive control components define how the system behaves under
+uncertainty and structural change.
+
+The controller suite includes:
+- UAMC (clarity)
+- ASM (uncertainty sensitivity)
+- TRP (targeted uncertainty reduction)
+- PPO (policy‑prior structure)
+- IGO (structural gradient integration)
+- RMO (risk modulation)
+- SLO (long‑horizon stability)
+- ICC (local coherence)
+- GCC (global alignment)
 
 These layers show:
+- how ICA stabilizes itself
+- how thresholds adapt
+- how coherence is maintained
+- how instability is detected
 
-• how ICA stabilizes itself
-• how thresholds adapt
-• how regulators activate
-• how safe‑mode and escalation work
-
-
-This is where ICA becomes operational, not just conceptual.
+This is where ICA becomes operational.
 
 ---
 
-5. Review the Mathematical Appendix
+## Review the Mathematical Appendix
 
 Open:
-
+```
 ICA‑V1a‑Math‑Appendix.md
+```
 
 This contains:
+- formal operator definitions
+- objective function math
+- gradient structure
+- stability conditions
+- coherence thresholds
+- regulator equations
 
-• formal definitions
-• operator equations
-• stability conditions
-• threshold dynamics
-• regulator math
-
-
-Use this when you want the rigorous mathematical grounding behind the architecture.
+Use this for rigorous mathematical grounding.
 
 ---
 
-6. Read the Implementation Notes
+## Read the Implementation Notes
 
 Open:
-
+```
 ICA‑V1a‑Implementation‑Notes.md
+```
 
 This explains:
-
-• how to instantiate ICA in RL
-• how to implement regulators
-• how to structure meta‑cognition
-• how to integrate ICA into real systems
-
+- how to instantiate ICA in RL
+- how to implement operators
+- how to structure controller layers
+- how to integrate ICA into real systems
 
 This is the engineering‑focused document.
 
 ---
 
-7. Understand Real‑World Behavior Through Deployment Notes
+## Understand Real‑World Behavior Through Deployment Notes
 
 Open:
-
+```
 ICA‑V1a‑Deployment‑Notes.md
+```
 
 This covers:
+- safe‑mode behavior
+- escalation logic
+- capability restriction
+- uncertainty handling
+- distributional shift
+- monitoring and logging
 
-• safe‑mode
-• escalation
-• capability restriction
-• uncertainty handling
-• distributional shift
-• logging and monitoring
-
-
-This is essential for understanding ICA in production environments.
+This is essential for understanding ICA in production.
 
 ---
 
-8. Use the 1‑D Toy Model as a Reference
+## Use the 1‑D Toy Model as a Reference
 
-The canonical 1‑D example provides a simple, concrete demonstration of ICA dynamics:
-
-• curiosity
-• uncertainty
-• awareness
-• compassion
-• unified policy behavior
-
+The canonical 1‑D example provides a simple, concrete demonstration of ICA
+dynamics:
+- uncertainty
+- risk
+- structural gradients
+- unified objective behavior
 
 This is the fastest way to build intuition.
 
 ---
 
-9. Treat the Repository as the Canonical Source
+## Treat the Repository as Canonical
 
-All refinements are integrated directly into the doctrine with explicit confirmation.
-This repository is the authoritative, timestamped version of ICA V1.a.
+All refinements are integrated directly into the doctrine with explicit
+confirmation. This repository is the authoritative, timestamped version of
+ICA V1.a.
 
 ---
 
-Recommended Reading Order
+## Recommended Reading Order
 
-1. Specification
-2. Operator Diagram
-3. Scaling Hierarchy (1‑D → 2‑D → 3‑D)
-4. Controller Layers
-5. Math Appendix
-6. Implementation Notes
-7. Deployment Notes
-8. 1‑D Toy Model Example
-9. Changelog
-
+1. Technical Specification  
+2. Operator Diagram  
+3. Scaling Hierarchy (1‑D → 2‑D → 3‑D)  
+4. Controller Layers  
+5. Mathematical Appendix  
+6. Implementation Notes  
+7. Deployment Notes  
+8. 1‑D Toy Model  
+9. Changelog  
 
 ---
 
 End of How‑To‑Read Guide
-
----
