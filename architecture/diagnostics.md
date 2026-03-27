@@ -11,16 +11,19 @@ Hysteresis is monitored to ensure that state transitions do not oscillate or thr
 
 ## Stability Monitors
 Stability monitors track several operational variables:
-- operator intensity
+- SCO output intensity
+- URO gain levels
+- RCO constraint weighting
+- MIO update frequency
 - modulation gain
 - regulator activation frequency
-- embodied grounding signals
+- embodied stability signals
 - noise levels in the input stream
 
 These measurements detect early signs of overload, drift, or chaotic dynamics.
 
 ## Signal Quality Assessment
-The diagnostics layer evaluates the clarity and reliability of both incoming and internal signals. High noise, contradiction, or corruption triggers alerts that feed into the Noise Gate and Dampener. This prevents the architecture from reacting to unreliable or adversarial input.
+The diagnostics layer evaluates the clarity and reliability of both incoming and internal signals. High noise, contradiction, or corruption triggers alerts that feed into the Noise Gate and the Dampener. This prevents the architecture from reacting to unreliable or adversarial input.
 
 ## Transition Tracking
 State transitions are monitored to determine whether shifts are smooth, abrupt, or unstable. This information allows regulators to adjust thresholds, timing, and activation windows to maintain fluid cognitive flow.
