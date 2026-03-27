@@ -1,36 +1,37 @@
+
 # Diagnostics Layer
 
-The diagnostics layer provides continuous monitoring of system stability, coherence, and signal quality across ICA V1.a. It acts as the architecture’s internal instrumentation panel, giving the OS Layer and regulators the information they need to maintain balance, prevent runaway activation, and respond to destabilizing conditions. Diagnostics do not change system behavior directly; they inform the components that do.
+The diagnostics layer provides continuous measurement of stability, coherence, and signal quality across ICA V1.a. It functions as the system’s instrumentation panel, supplying the OS Layer and the regulator stack with the data required to maintain stable operation. Diagnostics do not modify behavior directly; they supply the information that other components act on.
 
 ## Coherence Monitoring
-The system tracks global coherence as a real‑time signal. Drops in coherence indicate fragmentation, overload, or destabilizing input. This monitoring allows regulators such as ICC, SLO, and the Noise Gate to intervene before instability escalates.
+Global coherence is tracked as a real‑time signal. Reductions in coherence indicate fragmentation, overload, or destabilizing input. These measurements allow regulators such as ICC, SLO, and the Noise Gate to activate before instability escalates.
 
-## Hysteresis
-Hysteresis prevents rapid oscillation between states by enforcing minimum transition thresholds. Once a regulator activates, hysteresis ensures it remains active long enough to stabilize the system before releasing control. This reduces jitter, thrashing, and premature state changes.
+## Hysteresis Tracking
+Hysteresis is monitored to ensure that state transitions do not oscillate or thrash. Once a regulator activates, hysteresis ensures it remains active long enough to stabilize the system before releasing control. Diagnostics verify that these thresholds are being respected and that transitions remain smooth.
 
 ## Stability Monitors
-Stability monitors track:
-- operator intensity  
-- modulation gain  
-- regulatory activation frequency  
-- embodied grounding signals  
-- noise levels in the input stream  
+Stability monitors track several operational variables:
+- operator intensity
+- modulation gain
+- regulator activation frequency
+- embodied grounding signals
+- noise levels in the input stream
 
-These monitors detect early signs of overload, drift, or chaotic dynamics.
+These measurements detect early signs of overload, drift, or chaotic dynamics.
 
 ## Signal Quality Assessment
-The diagnostics layer evaluates the clarity and reliability of incoming and internal signals. High noise or contradiction triggers alerts that feed into the Noise Gate and Dampener. This ensures that the architecture does not overreact to corrupted or adversarial input.
+The diagnostics layer evaluates the clarity and reliability of both incoming and internal signals. High noise, contradiction, or corruption triggers alerts that feed into the Noise Gate and Dampener. This prevents the architecture from reacting to unreliable or adversarial input.
 
 ## Transition Tracking
-The system tracks transitions between cognitive states, identifying when shifts are smooth, abrupt, or unstable. This information helps regulators adjust thresholds and timing to maintain fluid cognitive flow.
+State transitions are monitored to determine whether shifts are smooth, abrupt, or unstable. This information allows regulators to adjust thresholds, timing, and activation windows to maintain fluid cognitive flow.
 
 ## Reflex Arc Feedback
-Diagnostics incorporate embodied feedback from the reflex arc:
-- grounding strength  
-- completion signal reliability  
-- parasympathetic stabilization cues  
+Diagnostics incorporate embodied feedback from the reflex arc, including:
+- grounding strength
+- completion‑signal reliability
+- parasympathetic stabilization cues
 
-These signals help the architecture determine whether instability is cognitive, embodied, or both.
+These measurements help determine whether instability originates in cognitive activity, embodied state, or both.
 
 ## Summary
-The diagnostics layer provides the visibility and measurement needed for ICA V1.a to remain coherent, stable, and resilient. It enables the OS Layer and regulators to act with precision, ensuring the architecture adapts intelligently to both internal dynamics and external conditions.
+The diagnostics layer provides the measurement backbone that allows ICA V1.a to maintain coherence and stability. By supplying precise, continuous data to the OS Layer and regulator stack, it ensures the architecture adapts intelligently to internal dynamics and external conditions.
