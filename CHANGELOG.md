@@ -1,10 +1,10 @@
 
-# ICA V1.a – Changelog  
+# ICA V1.a – Changelog
 Version: V1.a  
 Status: Stable, canonical, reference specification  
 Release Type: First public academic release  
 
-## Summary  
+## Summary
 ICA V1.a is the first complete, unified, and canonical release of the Integrative Cognitive Architecture. This version consolidates all architectural components into a single, engineering‑clean system with:
 
 - a formal specification  
@@ -18,9 +18,9 @@ ICA V1.a is the first complete, unified, and canonical release of the Integrativ
 
 This release is intended for academic review, engineering implementation, and long‑term archival.
 
-## Major Components Included in V1.a  
+## Major Components Included in V1.a
 
-### Core Specification  
+### Core Specification
 Defines the full canonical architecture, including:
 
 - State Estimation System (SES)  
@@ -35,7 +35,7 @@ Defines the full canonical architecture, including:
 - Reflex arc and diagnostic stability logic  
 - Formal degradation invariant  
 
-### Mathematical Appendix  
+### Mathematical Appendix
 Provides formal definitions for:
 
 - State representation `\(x_t = (\hat{s}_t, \theta_t, \Sigma_t, m_t)\)`  
@@ -47,7 +47,7 @@ Provides formal definitions for:
 - Diagnostic stability regime  
 - Degradation invariant  
 
-### Operator Diagram  
+### Operator Diagram
 A text‑only, GitHub‑friendly diagram showing:
 
 - SES → IGS → RMS → MUS flow  
@@ -57,7 +57,7 @@ A text‑only, GitHub‑friendly diagram showing:
 - Reflex arc and RSC integration  
 - Deployment‑safe action flow  
 
-### Implementation Notes  
+### Implementation Notes
 Engineering guidance covering:
 
 - Modular construction of SES/IGS/RMS/MUS  
@@ -67,13 +67,13 @@ Engineering guidance covering:
 - Threshold and volatility handling  
 - Testing and validation considerations  
 
-## Versioning Notes  
+## Versioning Notes
 - V1.a is the first canonical release.  
 - All future versions must document changes here.  
 - Breaking changes must be explicitly labeled.  
 - Prior versions must remain accessible for academic traceability.  
 
-## Next Version Placeholder  
+## Next Version Placeholder
 
-### V1.b (Unreleased)  
+### V1.b (Unreleased)
 This section will be populated when architectural or mathematical refinements are introduced.
