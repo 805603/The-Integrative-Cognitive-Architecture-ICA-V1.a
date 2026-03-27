@@ -1,0 +1,7 @@
+PROJECT-DESCRIPTION.txt
+
+The Integrative Cognitive Architecture (ICA V1.a)
+
+A coherence‑first cognitive architecture integrating operators, modulators, regulators, diagnostics, and embodied grounding into a unified, stability‑anchored system for research, engineering, and academic evaluation.
+
+This description is intended for the GitHub repository header. It provides a concise, authoritative identity statement for ICA V1.a, communicating its purpose, scope, and structural integration in a single line.
