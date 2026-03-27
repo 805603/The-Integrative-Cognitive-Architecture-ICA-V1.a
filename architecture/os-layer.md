@@ -8,45 +8,45 @@ The OS Layer is the foundational control system of ICA V1.a. It maintains global
 - Integrate signals from operators, modulators, and regulators into a unified control state.
 - Detect shifts in internal or external conditions that require rebalancing.
 - Provide global constraints that prevent runaway activation or fragmentation.
-- Serve as the reference point for the reflex arc and suspended‑aliveness state.
+- Serve as the reference point for the reflex arc and the stability baseline.
 
 ## Coherence State
 The coherence state represents the system’s global clarity and stability. It is influenced by:
-- operator activity levels  
-- modulation intensity  
-- regulatory interventions  
-- embodied signals from the reflex arc  
+- operator activity levels
+- modulation intensity
+- regulatory interventions
+- embodied signals from the reflex arc
 
-A high-coherence state supports accurate perception, balanced curiosity, and safe decision-making. A low-coherence state triggers stabilizing regulators and grounding mechanisms.
+High coherence supports accurate perception, balanced operator activity, and safe decision‑making. Low coherence triggers stabilizing regulators and grounding mechanisms.
 
 ## Signal Integration
 The OS Layer continuously integrates:
-- awareness signals  
-- uncertainty estimates  
-- compassion-based safety penalties  
-- knowledge updates  
-- modulation weights  
-- regulatory constraints  
+- Awareness signals
+- Curiosity‑driven uncertainty estimates
+- Compassion‑based safety penalties
+- Knowledge updates
+- modulation weights
+- regulatory constraints
 
 This integration ensures that no subsystem operates in isolation and that all cognitive processes remain aligned with the system’s global state.
 
 ## Stability Mechanisms
-The OS Layer includes built-in mechanisms to maintain stability:
-- coherence monitoring  
-- hysteresis to prevent oscillation  
-- adaptive thresholding  
-- grounding signals from the reflex arc  
-- parasympathetic stabilization cues  
+The OS Layer includes built‑in mechanisms to maintain stability:
+- coherence monitoring
+- hysteresis to prevent oscillation
+- adaptive thresholding
+- grounding signals from the reflex arc
+- parasympathetic stabilization cues
 
 These mechanisms ensure the architecture remains resilient under stress, ambiguity, or adversarial input.
 
 ## Relationship to the Reflex Arc
-The reflex arc provides embodied feedback that directly influences the OS Layer. Completion signals and grounding cues help the system re-establish coherence during transitions or destabilizing events.
+The reflex arc provides embodied feedback that directly influences the OS Layer. Completion signals and grounding cues help the system re‑establish coherence during transitions or destabilizing events.
 
-## Relationship to Suspended‑Aliveness
-The suspended‑aliveness baseline is the OS Layer’s optimal coherence state. It represents:
-- clarity without tension  
-- stability without rigidity  
-- openness without overwhelm  
+## Relationship to the Stability Baseline
+The stability baseline is the OS Layer’s optimal coherence state. It represents:
+- clarity without tension
+- stability without rigidity
+- openness without overload
 
-This state acts as the system’s internal “home position,” guiding all operators and regulators toward balanced functioning.
+This state functions as the system’s internal reference position, guiding operators and regulators toward balanced functioning.
