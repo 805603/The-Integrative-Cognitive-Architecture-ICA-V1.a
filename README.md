@@ -1,175 +1,127 @@
-## How to Navigate This Repository
-
-This repository contains the complete ICA V1.a architecture. To make your
-review as smooth as possible, here is the recommended reading path:
-
-### 1. Start Here — High-Level Overview
-**ICA-V1a-Manuscript.md**  
-This is the narrative explanation of the architecture. If you want to
-understand ICA conceptually, philosophically, and structurally, start here.
-
-### 2. Core Technical Specification
-**ICA-V1a-Specification.md**  
-This is the formal, technical definition of ICA. It contains the operators,
-invariants, controller logic, and mathematical framing.
-
-### 3. Visual Understanding
-**ICA-V1a-Operator-Diagram.md**  
-A visual map of the system. This helps you see how the components interact.
-
-### 4. Academic Context (Optional)
-**ICA-V1a-Academic.md**  
-This file explains how ICA fits into existing research landscapes and why
-the architecture is novel.
-
-### 5. Implementation Notes (Optional)
-**ICA-V1a-Implementation-Notes.md**  
-Practical considerations for building ICA in real systems.
-
-### 6. Deployment Notes (Optional)
-**ICA-V1a-Deployment-Notes.md**  
-Guidance for real-world use, stability considerations, and operational
-behavior.
-
-### 7. Mathematical Appendix (Optional Deep Dive)
-**ICA-V1a-Math-Appendix.md**  
-Detailed mathematical expansions, derivations, and formalism.
-
----
-
-## Licensing
-
-- **LICENSE** — MIT License for all code  
-- **LICENSE-DOCS** — CC BY-ND 4.0 for all written materials  
-- **COPYRIGHT** — Ownership declaration  
-- **NOTICE** — Mixed-license explanation  
-
----
-
-## If You Only Have 10 Minutes
-
-Read:
-
-1. **ICA-V1a-Manuscript.md** (first few sections)  
-2. **ICA-V1a-Operator-Diagram.md**
-
-This gives you the essence of ICA quickly.
-
----
-
-## If You Want the Full Picture
-
-Follow the reading path above in order.
-
-This structure is designed to make ICA V1.a easy to understand, whether you
-are a researcher, engineer, or reviewer.
-Integrative Cognitive Architecture (ICA)
+ICA V1.a — Integrative Cognitive Architecture
 
 A Unified, Mathematically Grounded, Empirically Falsifiable Theory of Cognitive Stability
 
-Integrative Cognitive Architecture (ICA) is the first framework to provide a unified, mathematically grounded theory of cognitive stability, predicting both system coherence and failure modes under uncertainty. ICA hypothesizes that cognitive systems remain coherent and robust only when controller‑layer operators (UAMC, ICC, ASM, TRP, PPO, IGO, RMO, SLO) are jointly optimized under a single coherence condition.
+This repository contains the complete ICA V1.a architecture, a framework for predicting system coherence and failure modes under uncertainty. ICA formalizes cognition as a joint optimization of controller outputs, making it predictive, mathematically grounded, and empirically testable.
 
----
+⸻
 
-Controller‑Layer Operators (One‑Line Definitions)
+📖 Recommended Reading Path
 
-• UAMC — signal clarity modulation
-• ICC — global coherence constraint
-• ASM — uncertainty‑sensitivity modulation
-• TRP — targeted uncertainty reduction
-• PPO — policy‑prior organization
-• IGO — integration of structural gradients
-• RMO — risk‑modulation operator
-• SLO — long‑horizon stability operator
+To navigate this repository efficiently:
+	1.	Start Here — High-Level Overview
+ICA-V1a-Manuscript.md
+Conceptual, philosophical, and structural explanation of ICA. Begin here to understand the architecture’s ideas.
+	2.	Core Technical Specification
+ICA-V1a-Specification.md
+Formal definition including operators, invariants, controller logic, and mathematical framing.
+	3.	Visual Understanding
+ICA-V1a-Operator-Diagram.md
+Visual map showing component interactions.
+	4.	Academic Context (Optional)
+ICA-V1a-Academic.md
+Explains ICA’s placement in research and highlights its novelty.
+	5.	Implementation Notes (Optional)
+ICA-V1a-Implementation-Notes.md
+Practical guidance for building ICA in real systems.
+	6.	Deployment Notes (Optional)
+ICA-V1a-Deployment-Notes.md
+Operational guidance, stability considerations, and real-world behavior.
+	7.	Mathematical Appendix (Optional Deep Dive)
+ICA-V1a-Math-Appendix.md
+Detailed derivations and formal mathematical expansions.
 
+⸻
 
----
+⏱ Quick Start: 10-Minute Overview
+	•	Read the first sections of ICA-V1a-Manuscript.md
+	•	Review ICA-V1a-Operator-Diagram.md
 
-Unified Objective Function
+This gives a concise understanding of ICA’s structure and purpose.
 
-ICA formalizes cognition as the joint optimization of controller outputs, yielding a single analyzable objective instead of heuristic collections.
+⸻
 
----
+🔬 Controller-Layer Operators
+Operator
+Purpose
+UAMC
+Signal Clarity Modulation
+ICC
+Global Coherence Constraint
+ASM
+Uncertainty-Sensitivity Modulation
+TRP
+Targeted Uncertainty Reduction
+PPO
+Policy-Prior Organization
+IGO
+Integration of Structural Gradients
+RMO
+Risk-Modulation Operator
+SLO
+Long-Horizon Stability Operator
 
-Explicit Controller Suite
+🎯 Unified Objective Function
 
-ICA’s mathematically defined controller suite predicts system behavior under uncertainty, including:
+ICA formalizes cognition as joint optimization of all controller outputs, producing a single, analyzable objective rather than separate heuristics.
 
-• instability during exploration
-• oscillation or collapse
-• activation of safe‑ or aggressive‑mode transitions
-• recovery of stability
+⸻
 
+⚙️ Explicit Controller Suite
 
-This makes ICA predictive rather than descriptive.
+Predicts system behavior under uncertainty, including:
+	•	Instability during exploration
+	•	Oscillations or collapse
+	•	Safe- or aggressive-mode transitions
+	•	Recovery of stability
 
----
+ICA is predictive rather than descriptive.
 
-Evaluation Models
+⸻
 
-ICA is testable across three progressively richer environments:
+🧪 Evaluation Models
 
-• 1‑D toy model demonstrations
-• 2‑D interaction model
-• 3‑D embodied model
+ICA is tested in progressively richer environments:
+	1.	1-D Toy Model — Demonstrations of basic dynamics
+	2.	2-D Interaction Model — Multi-component interactions
+	3.	3-D Embodied Model — Full physical/embodied simulations
 
+Each environment exposes stability windows, coherence properties, and failure modes.
 
-Each exposes distinct stability windows, coherence properties, and failure modes.
+⸻
 
----
+✅ Derived Stability Result
+	•	RMO is essential for stability.
+	•	Systems without RMO show: runaway exploration, adversarial collapse, long-horizon incoherence, and failure to recover from Black Swan events.
+	•	This is an empirically falsifiable prediction.
 
-Derived Stability Result
+⸻
 
-ICA predicts — and demonstrates — that RMO is a required stabilizer.
-Systems lacking RMO exhibit:
+📊 Evidence in This Repository
+	•	1-D toy model demonstrations
+	•	Stability windows and hysteresis analysis
+	•	Black Swan stress tests
+	•	Controller-layer predictions
+	•	Mathematical derivations of coherence condition
+	•	Operator-interaction analysis across the full controller suite
 
-• runaway exploration
-• adversarial collapse
-• long‑horizon incoherence
-• failure to recover from Black Swan events
+⸻
 
+🌟 Why ICA Matters
+	•	Provides a scientific theory of cognitive architecture
+	•	Makes precise, testable claims
+	•	Offers replicable tests and mathematical structure
+	•	Predicts instability and failure modes under uncertainty
 
-This is a falsifiable claim.
+⸻
 
----
+📚 Citation
 
-Evidence Included in This Repository
+If referencing ICA V1.a in academic work, cite this repository as the canonical source.
 
-• 1‑D toy model demonstrations
-• Stability windows and hysteresis analysis
-• Black Swan stress tests
-• Controller‑layer predictions
-• Mathematical derivations of the coherence condition
-• Operator‑interaction analysis across the full controller suite
+⸻
 
-
-Together, these form a complete evaluation suite for ICA’s central hypothesis.
-
----
-
-Why ICA Matters
-
-ICA reframes cognitive architecture as a scientific theory.
-It makes precise claims, provides mathematical structure, predicts instability, offers replicable tests, and is empirically falsifiable.
-
-
----
-
-Citation
-
-If you reference ICA V1.a in academic work, cite this repository as the canonical source.
-
----
-## Licensing
-
-This repository uses a mixed-license structure:
-
-• All source code is licensed under the MIT License (see LICENSE).  
-• All documentation, manuscripts, diagrams, and written materials are
-  licensed under CC BY-ND 4.0 (see LICENSE-DOCS).  
-
-See the NOTICE file for a summary of licensing terms.
-
----
-
-End of README
+📝 Licensing
+	•	Code: MIT License (LICENSE)
+	•	Documentation: CC BY-ND 4.0 (LICENSE-DOCS)
+	•	See NOTICE for a summary of mixed-license terms
