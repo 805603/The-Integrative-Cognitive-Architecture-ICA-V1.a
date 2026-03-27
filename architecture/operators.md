@@ -1,25 +1,25 @@
 
-# Core Operators
+# Core Operator Codes
 
-The operator layer defines the four fundamental cognitive functions that drive ICA V1.a. Each operator contributes a distinct control signal, and together they form the system’s primary perception, evaluation, and learning engine. Operator output flows directly into the OS Layer, modulators, and regulators, creating a unified and adaptive cognitive pipeline.
+The operator layer defines the four fundamental computational functions that drive ICA V1.a. Each operator code contributes a distinct control signal, and together they form the system’s primary evaluation, prediction, constraint, and integration engine. Operator‑code output flows directly into the OS Layer, modulators, and regulators, creating a unified and adaptive processing pipeline.
 
-## Awareness
-Awareness tracks the clarity, salience, and structure of incoming information. It evaluates what is present, how stable it is, and the ratio of signal to noise in the current state. Awareness anchors perception and provides the baseline for all higher‑order processing.
+## SCO — Signal Clarity Operator
+SCO evaluates the clarity, structure, and stability of incoming information. It measures signal‑to‑noise ratio, identifies salient features, and establishes the baseline precision required for higher‑order processing.
 
-## Curiosity
-Curiosity estimates expected uncertainty reduction. It identifies where exploration is valuable and where additional information would meaningfully improve the system’s internal model. Curiosity drives adaptive learning and forward movement while remaining bounded by system stability constraints.
+## URO — Uncertainty Reduction Operator
+URO estimates expected uncertainty reduction. It identifies where additional information would meaningfully improve internal models and prioritizes exploration pathways that maximize predictive improvement while remaining within stability constraints.
 
-## Compassion
-Compassion applies a danger‑zone penalty function that protects the architecture from harmful, destabilizing, or high‑risk trajectories. It evaluates potential actions and states for safety, coherence, and long‑term stability. Compassion ensures that exploration remains aligned with system integrity.
+## RCO — Risk Constraint Operator
+RCO applies a constraint‑weighting function that protects the architecture from harmful, destabilizing, or high‑risk trajectories. It evaluates predicted states and actions for safety, coherence, and long‑term stability, ensuring alignment with system integrity.
 
-## Knowledge
-Knowledge integrates updates to the system’s internal models. It consolidates new information, strengthens reliable patterns, and adjusts beliefs based on evidence. Knowledge maintains continuity, reduces fragmentation, and supports long‑term coherence across the architecture.
+## MIO — Model Integration Operator
+MIO integrates validated updates into the system’s internal models. It consolidates new information, strengthens reliable patterns, and adjusts structural representations based on evidence. MIO maintains continuity and reduces fragmentation across the architecture.
 
 ## Interaction Pattern
-The four operators function as a coordinated set:
-- Awareness provides clarity and structure.
-- Curiosity identifies valuable uncertainty.
-- Compassion constrains unsafe or destabilizing paths.
-- Knowledge updates the internal model based on validated information.
+The four operator codes function as a coordinated set:
+- SCO provides clarity and structural precision.
+- URO identifies uncertainty‑reduction opportunities.
+- RCO constrains unsafe or destabilizing trajectories.
+- MIO updates and stabilizes internal models.
 
-Their combined output forms the core cognitive signal that modulators refine and regulators stabilize.
+Their combined output forms the core computational signal that modulators refine and regulators stabilize.
