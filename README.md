@@ -1,3 +1,4 @@
+# The Integrative Cognitive Architecture (ICA V1.a)
 
 
 ## Architecture Overview
