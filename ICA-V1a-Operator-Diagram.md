@@ -1,3 +1,4 @@
+
 # ICA‑V1.a Operator Diagram and System Flow
 
 This document provides the complete schematic and structural summary for the Integrative Cognitive Architecture (ICA) V1.a operator suite, coherence mechanisms, unified objective, action/state loop, global stability conditions, and evaluation models. It is fully aligned with the finalized ICA V1.a Manuscript and serves as the visual/structural companion to the Technical Specification.
@@ -186,4 +187,3 @@ Figure placeholder: *3‑D Embodied Stability Analysis — operator overlay*
 This document is protected under the ICA V1.a licensing structure.  
 All conceptual, mathematical, and architectural components—including the operator suite, coherence mechanisms, unified objective, global alignment condition, and system flow—constitute protected intellectual property of ICA V1.a.  
 See LICENSE and LICENSE-DOCS in the repository root for full terms.
-
